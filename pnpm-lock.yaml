@@ -8,6 +8,7 @@ specifiers:
   '@chakra-ui/theme-tools': ^2.0.16
   '@emotion/react': ^11.10.6
   '@emotion/styled': ^11.10.6
+  '@fontsource/belleza': ^4.5.11
   '@types/node': 18.14.2
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
@@ -32,6 +33,7 @@ dependencies:
   '@chakra-ui/theme-tools': 2.0.16_es2flcfvdj7o2v4vs237ptvmhy
   '@emotion/react': 11.10.6_pmekkgnqduwlme35zpnqhenc34
   '@emotion/styled': 11.10.6_oouaibmszuch5k64ms7uxp2aia
+  '@fontsource/belleza': 4.5.11
   '@types/node': 18.14.2
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
@@ -1343,6 +1345,10 @@ packages:
   /@eslint/js/8.35.0:
     resolution: {integrity: sha512-JXdzbRiWclLVoD8sNUjR443VVlYqiYmDVT6rGUEIEHU5YJW0gaVZwV2xgM7D4arkvASqD0IlLUVjHiFuxaftRw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: false
+
+  /@fontsource/belleza/4.5.11:
+    resolution: {integrity: sha512-F6R5aYsEdpLg2+mZallZeUQsqOb6aFf+RkcPfrwdxAcrtfjh40QifGFm2cHa9BiN887AdKZF4DltEfoFurNixQ==}
     dev: false
 
   /@humanwhocodes/config-array/0.11.8:
