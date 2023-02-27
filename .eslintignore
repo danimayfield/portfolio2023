@@ -1,0 +1,16 @@
+# Build Folders
+build/
+.next/
+
+# Dependencies
+node_modules/
+
+# Misc
+.vscode/
+
+# This allows for this plugin to also lint your configuration files inside the
+# .storybook folder, so that you always have a correct configuration and don't
+# face any issues regarding mistyped addon names, for instance.
+# @see https://www.npmjs.com/package/eslint-plugin-storybook
+# @see https://eslint.org/docs/latest/user-guide/configuring/ignoring-code#:~:text=In%20addition%20to,contents%2C%20are%20ignored
+!.storybook
