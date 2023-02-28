@@ -6,7 +6,7 @@ type TitleHeadingProps = HeadingProps & PropsWithChildren;
 export const TitleHeading = ({ children, ...props }: TitleHeadingProps) => {
   return (
     <Heading
-      fontSize="8xl"
+      fontSize={{ base: '6xl', sm: '7xl', md: '8xl' }}
       fontFamily="belleza"
       color="blacks.800"
       letterSpacing={5}
