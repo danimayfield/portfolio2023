@@ -9,7 +9,7 @@ export const HomePage = () => {
   return (
     <Box as="main" bg="white">
       <HomeTopSection />
-      <HomeMiddleSection mt="40%" />
+      <HomeMiddleSection mt="8%" />
     </Box>
   );
 };

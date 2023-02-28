@@ -9,7 +9,7 @@ import {
   Text,
   useTheme,
 } from '@chakra-ui/react';
-import { StyledCircle, TitleHeading } from '@shared/components';
+import { StyledCircle, StyledText, TitleHeading } from '@shared/components';
 
 type HomeTopSectionProps = BoxProps;
 
@@ -41,17 +41,11 @@ export const HomeTopSection = ({ ...props }: HomeTopSectionProps) => {
       />
       <Center>
         <Box zIndex={100} mt="20%" ml="15%">
-          <TitleHeading as="h1">DANI</TitleHeading>
-          <TitleHeading as="h1">MAYFIELD</TitleHeading>
-          <Text
-            zIndex={100}
-            fontFamily="belleza"
-            letterSpacing={4}
-            color="blacks.700"
-            mt="4"
-          >
-            A passionate Front End Developer based in Ontario, Canada.
-          </Text>
+          <TitleHeading as="h1">dani</TitleHeading>
+          <TitleHeading as="h1">mayfield</TitleHeading>
+          <StyledText mt="4">
+            a passionate front end developer based in ontario, canada.
+          </StyledText>
         </Box>
       </Center>
 
@@ -62,7 +56,7 @@ export const HomeTopSection = ({ ...props }: HomeTopSectionProps) => {
           textDecoration="underline"
           zIndex={100}
         >
-          Resume
+          resume
         </Link>
         <Text zIndex={100}> / </Text>
         <Link
@@ -71,7 +65,7 @@ export const HomeTopSection = ({ ...props }: HomeTopSectionProps) => {
           textDecoration="underline"
           zIndex={100}
         >
-          GitHub
+          github
         </Link>
         <Text zIndex={100}> / </Text>
         <Link
@@ -80,7 +74,7 @@ export const HomeTopSection = ({ ...props }: HomeTopSectionProps) => {
           textDecoration="underline"
           zIndex={100}
         >
-          LinkedIn
+          linkedIn
         </Link>
       </HStack>
     </Box>
