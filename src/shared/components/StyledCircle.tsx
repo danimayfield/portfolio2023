@@ -32,6 +32,7 @@ export const StyledCircle = ({
         0 0 30px ${color},
         0 0 20px ${color},
         0 0 10px ${bgColor};`}
+      zIndex={2}
       {...props}
     />
   );
