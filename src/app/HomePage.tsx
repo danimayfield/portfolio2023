@@ -1,28 +1,34 @@
 'use client';
 
 import React from 'react';
-import { Box, Center, Text } from '@chakra-ui/react';
+import { Box, Center, Text, useTheme } from '@chakra-ui/react';
 import { StyledCircle, TitleHeading } from '@shared/components';
 
 export const HomePage = () => {
+  const { colors } = useTheme();
   return (
-    <Box position="relative" overflowX="clip">
-      <StyledCircle color="#E9B7CE" position="absolute" top={-40} left={-40} />
+    <Box position="relative" overflowX="clip" bg="white">
       <StyledCircle
-        color="#caefd7"
+        color={colors.pink[400]}
+        position="absolute"
+        top={-40}
+        left={-40}
+      />
+      <StyledCircle
+        color={colors.mint[400]}
         position="absolute"
         top={-5}
         right={-250}
-        w="4xl"
-        h="4xl"
+        w="2xl"
+        h="2xl"
       />
       <StyledCircle
-        color="#d3f3f1"
+        color={colors.sky[400]}
         position="absolute"
         top={550}
         left={40}
-        w="xl"
-        h="xl"
+        w="md"
+        h="md"
       />
       <Center>
         <Box zIndex={100} mt="20%" ml="15%">

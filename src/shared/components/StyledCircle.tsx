@@ -2,33 +2,36 @@ import React from 'react';
 import { Box, BoxProps, ColorProps } from '@chakra-ui/react';
 
 type StyledCircleProps = BoxProps & {
-  color?: ColorProps;
-  bgColor?: ColorProps;
+  color: ColorProps['color'];
+  bgColor?: ColorProps['color'];
 };
 
 export const StyledCircle = ({
-  color = 'blue.500',
+  color,
   bgColor = 'white',
   ...props
 }: StyledCircleProps) => {
   return (
     <Box
-      w="3xl"
-      h="3xl"
+      w="xl"
+      h="xl"
       bgColor={color}
-      // bg={`radial-gradient(ellipse at center center, ${color} 10%, ${bgColor} 70%, ${bgColor} 100%)`}
       borderRadius="full"
-      border={`2px solid ${bgColor}`}
-      boxShadow={`inset -35px 55px 100px ${bgColor},
-        inset 0 0 90px ${bgColor},
-        inset 0 0 80px ${bgColor},
-        inset 0 0 70px ${bgColor},
-        inset 0 0 60px ${bgColor},
-        inset 0 0 50px ${bgColor},
-        inset 0 0 40px ${bgColor},
-        inset 0 0 30px ${bgColor},
-        inset 0 0 20px ${bgColor},
-        inset 0 0 10px ${color};`}
+      border="0px"
+      boxShadow={`-35px 55px 140px ${color},
+        0 0 130px ${color},
+        0 0 120px ${color},
+        0 0 110px ${color},
+        0 0 100px ${color},
+        0 0 90px ${color},
+        0 0 80px ${color},
+        0 0 70px ${color},
+        0 0 60px ${color},
+        0 0 50px ${color},
+        0 0 40px ${color},
+        0 0 30px ${color},
+        0 0 20px ${color},
+        0 0 10px ${bgColor};`}
       {...props}
     />
   );
