@@ -34,8 +34,14 @@ export const HomePage = () => {
         <Box zIndex={100} mt="20%" ml="15%">
           <TitleHeading as="h1">DANI</TitleHeading>
           <TitleHeading as="h1">MAYFIELD</TitleHeading>
-          <Text zIndex={100} fontFamily="belleza" color="blacks.700" mt="2">
-            FRONT END DEVELOPER
+          <Text
+            zIndex={100}
+            fontFamily="belleza"
+            letterSpacing={4}
+            color="blacks.700"
+            mt="4"
+          >
+            A passionate Front End Developer based in Ontario, Canada.
           </Text>
         </Box>
       </Center>
