@@ -22,7 +22,7 @@ export const HomeMiddleSection = ({ ...props }: HomeMiddleSectionProp) => {
         borderRight="1px"
         w="90%"
         h="sm"
-        left="30"
+        left={{ base: '30', lg: '65' }}
         zIndex={0}
       />
       <StyledCircle
