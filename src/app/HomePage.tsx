@@ -2,18 +2,20 @@
 
 import React from 'react';
 import { Box } from '@chakra-ui/react';
-import { HomeHeroSection } from './HomeHeroSection';
-import { HomeContentSection } from './HomeContentSection';
-import { HomeAboutSection } from './HomeAboutSection';
-import { HomeWorksSection } from './HomeWorksSection';
+import {
+  HomeContentSection,
+  HomeHeroSection,
+  HomeAboutSection,
+  HomeWorksSection,
+} from './HomePageComponents';
 
 export const HomePage = () => {
   return (
     <Box as="main" bg="white">
       <HomeHeroSection />
-      <HomeContentSection mt="8%" mb="15%" />
-      <HomeAboutSection mb="15%" />
-      <HomeWorksSection />
+      <HomeContentSection mt="8%" mb="20%" />
+      <HomeAboutSection mb="20%" />
+      <HomeWorksSection mb="20%" />
     </Box>
   );
 };
