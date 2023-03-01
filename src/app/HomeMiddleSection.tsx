@@ -7,7 +7,7 @@ import {
   useTheme,
   VStack,
 } from '@chakra-ui/react';
-import { StyledCircle, StyledText } from '@shared';
+import { linkHoverStyle, StyledCircle, StyledText } from '@shared';
 
 type HomeMiddleSectionProp = BoxProps;
 
@@ -48,9 +48,8 @@ export const HomeMiddleSection = ({ ...props }: HomeMiddleSectionProp) => {
                 <StyledText
                   fontSize="5xl"
                   fontFamily="belleza"
-                  _hover={{ color: 'blacks.400' }}
-                  transition="color 300ms ease"
                   zIndex={200}
+                  {...linkHoverStyle}
                 >
                   {label}
                 </StyledText>

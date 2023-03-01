@@ -10,6 +10,7 @@ import {
   useTheme,
 } from '@chakra-ui/react';
 import { StyledCircle, StyledText, TitleHeading } from '@shared/components';
+import { linkHoverStyle } from '@shared';
 
 type HomeTopSectionProps = BoxProps;
 
@@ -49,12 +50,13 @@ export const HomeTopSection = ({ ...props }: HomeTopSectionProps) => {
         </Box>
       </Center>
 
-      <HStack spacing="4" mt={{ base: '35%', xl: '20%', '2xl': '15%' }}>
+      <HStack spacing="4" pl="2" mt={{ base: '35%', xl: '20%', '2xl': '15%' }}>
         <Link
           href="https://drive.google.com/file/d/18P5_n8lriWNs98pZEecMXcI6LWsyhheg/view?usp=sharing"
           target="_blank"
           textDecoration="underline"
           zIndex={100}
+          {...linkHoverStyle}
         >
           resume
         </Link>
@@ -64,6 +66,7 @@ export const HomeTopSection = ({ ...props }: HomeTopSectionProps) => {
           target="_blank"
           textDecoration="underline"
           zIndex={100}
+          {...linkHoverStyle}
         >
           github
         </Link>
@@ -73,6 +76,7 @@ export const HomeTopSection = ({ ...props }: HomeTopSectionProps) => {
           target="_blank"
           textDecoration="underline"
           zIndex={100}
+          {...linkHoverStyle}
         >
           linkedIn
         </Link>
