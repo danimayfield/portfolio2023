@@ -24,7 +24,6 @@ const ProjectItem = () => (
 );
 
 export const HomeWorksSection = ({ ...props }: HomeWorksSectionProps) => {
-  const projects = ['fastForward', 'ahl', '1and1'];
   return (
     <Box {...props}>
       <StyledText
