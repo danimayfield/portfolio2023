@@ -5,6 +5,7 @@ import { Box } from '@chakra-ui/react';
 import { HomeHeroSection } from './HomeHeroSection';
 import { HomeContentSection } from './HomeContentSection';
 import { HomeAboutSection } from './HomeAboutSection';
+import { HomeWorksSection } from './HomeWorksSection';
 
 export const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ export const HomePage = () => {
       <HomeHeroSection />
       <HomeContentSection mt="8%" mb="15%" />
       <HomeAboutSection mb="15%" />
+      <HomeWorksSection />
     </Box>
   );
 };
