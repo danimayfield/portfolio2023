@@ -9,9 +9,9 @@ import {
 } from '@chakra-ui/react';
 import { linkHoverStyle, StyledCircle, StyledText } from '@shared';
 
-type HomeMiddleSectionProp = BoxProps;
+type HomeContentSectionProp = BoxProps;
 
-export const HomeMiddleSection = ({ ...props }: HomeMiddleSectionProp) => {
+export const HomeContentSection = ({ ...props }: HomeContentSectionProp) => {
   const { colors } = useTheme();
   const labels = ['about', 'works', 'contact'];
   return (

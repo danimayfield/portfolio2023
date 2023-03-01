@@ -12,9 +12,9 @@ import {
 import { StyledCircle, StyledText, TitleHeading } from '@shared/components';
 import { linkHoverStyle } from '@shared';
 
-type HomeTopSectionProps = BoxProps;
+type HomeHeroSectionProps = BoxProps;
 
-export const HomeTopSection = ({ ...props }: HomeTopSectionProps) => {
+export const HomeHeroSection = ({ ...props }: HomeHeroSectionProps) => {
   const { colors } = useTheme();
   return (
     <Box position="relative" overflowX="clip" px="4" {...props}>
