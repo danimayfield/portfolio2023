@@ -1,4 +1,11 @@
-export const projects = [
+export type Project = {
+  name: string;
+  skills: string[];
+  description: string;
+  favourite: string;
+};
+
+export const projects: Project[] = [
   {
     name: '1AND1',
     skills: ['react native', 'typescript', 'redux', 'redux toolkit'],
