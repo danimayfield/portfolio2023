@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, BoxProps, ColorProps } from '@chakra-ui/react';
 
-type StyledCircleProps = BoxProps & {
+export type StyledCircleProps = BoxProps & {
   color: ColorProps['color'];
   bgColor?: ColorProps['color'];
 };

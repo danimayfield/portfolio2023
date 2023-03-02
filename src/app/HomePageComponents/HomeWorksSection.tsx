@@ -1,32 +1,92 @@
-import React from 'react';
-import { Box, BoxProps, Divider, Flex, HStack, Text } from '@chakra-ui/react';
+'use client';
+import React, { useState } from 'react';
+import {
+  Box,
+  BoxProps,
+  Divider,
+  Flex,
+  FlexProps,
+  HStack,
+  Text,
+  useTheme,
+} from '@chakra-ui/react';
 import { Project, projects } from './constants';
-import { StyledText } from '@shared';
+import { MotionBox, MotionText, StyledCircle, StyledText } from '@shared';
 
 type HomeWorksSectionProps = BoxProps;
 
-type ProjectItemProps = { project: Project; index: number };
+type ProjectItemProps = FlexProps & { project: Project; index: number };
 
-const ProjectItem = ({ project, index }: ProjectItemProps) => {
-  const { name } = project;
+const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
+  const { colors } = useTheme();
+  const [isHovered, setIsHovered] = useState(false);
+  const { name, skills } = project;
+  const circleColor =
+    index === 0
+      ? colors.pink[300]
+      : index === 2
+      ? colors.sky[400]
+      : colors.mint[400];
+
   return (
     <>
       <Flex
         bg="blacks.50"
         w="100%"
-        h="20"
+        h="32"
         alignContent="center"
         justifyContent="space-between"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        cursor="pointer"
+        {...props}
       >
         <HStack alignItems="center" spacing="5">
-          <Box borderTop="1px" borderColor="blacks.400" w="20" />
-          <Text color="blacks.500">0{index + 1}</Text>
-          <Text color="blacks.700" fontWeight="semibold">
-            {name}
-          </Text>
+          <MotionBox animate={{ scaleX: isHovered ? 1.5 : undefined }}>
+            <Box
+              borderTop="1px"
+              borderColor="blacks.400"
+              w="20"
+              transition="ease"
+              scale={isHovered ? 2.2 : undefined}
+            />
+          </MotionBox>
+          <MotionText
+            color="blacks.500"
+            animate={{
+              scale: isHovered ? 1.3 : undefined,
+              translateX: isHovered ? 20 : undefined,
+            }}
+          >
+            0{index + 1}
+          </MotionText>
+          <MotionBox
+            animate={{
+              translateX: isHovered ? 60 : undefined,
+              scale: isHovered ? 1.2 : undefined,
+            }}
+          >
+            <Text color="blacks.700" fontWeight="semibold">
+              {name}
+            </Text>
+            <Text fontSize="2xs" color="blacks.500">
+              {skills.join(', ')}
+            </Text>
+          </MotionBox>
         </HStack>
         <Flex alignItems="center" mr="5%">
-          <Text>View</Text>
+          {isHovered && (
+            <MotionBox
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <StyledCircle color={circleColor} w="16" h="16" />
+            </MotionBox>
+          )}
+          <Text ml="5" color="blacks.800" fontSize="sm" zIndex={200}>
+            View
+          </Text>
         </Flex>
       </Flex>
       <Divider borderColor="blacks.100" />
