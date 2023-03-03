@@ -7,6 +7,7 @@ import {
   Flex,
   FlexProps,
   HStack,
+  Image,
   Text,
   useTheme,
 } from '@chakra-ui/react';
@@ -23,10 +24,10 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
   const { name, skills } = project;
   const circleColor =
     index === 0
-      ? colors.pink[300]
+      ? colors.mint[400]
       : index === 2
-      ? colors.sky[400]
-      : colors.mint[400];
+      ? colors.pink[300]
+      : colors.sky[400];
 
   return (
     <>
@@ -78,18 +79,58 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
           {isHovered && (
             <MotionBox
               initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
+              animate={{ opacity: 1, scale: 1, translateX: 60 }}
               transition={{ duration: 0.3 }}
+              zIndex={200}
+              position="relative"
             >
-              <StyledCircle color={circleColor} w="16" h="16" />
+              <Image
+                src={project.imageSrc}
+                alt={project.alt}
+                boxSize="3xs"
+                zIndex={203}
+                position="relative"
+              />
+              <StyledCircle
+                color={circleColor}
+                w="52"
+                h="52"
+                position="absolute"
+                top="5%"
+                left="5%"
+                zIndex={1}
+              />
             </MotionBox>
           )}
-          <Text ml="5" color="blacks.800" fontSize="sm" zIndex={200}>
-            View
-          </Text>
+          <MotionBox
+            animate={{
+              translateX: isHovered ? -90 : undefined,
+            }}
+            position="relative"
+            zIndex={205}
+          >
+            <Text color="blacks.800" px="5" position="relative" zIndex={205}>
+              View
+            </Text>
+            {isHovered && (
+              <MotionBox
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+                bgColor="gray.200"
+                w="110%"
+                h="9"
+                borderRadius="full"
+                position="absolute"
+                top="-1.5"
+                left="-1"
+                zIndex={204}
+              />
+            )}
+          </MotionBox>
         </Flex>
       </Flex>
-      <Divider borderColor="blacks.100" />
+      <Divider borderColor="blacks.100" zIndex={1} />
     </>
   );
 };
@@ -101,7 +142,6 @@ export const HomeWorksSection = ({ ...props }: HomeWorksSectionProps) => {
         as="h2"
         fontSize="6xl"
         fontFamily="belleza"
-        zIndex={200}
         textAlign="right"
         mr="5%"
       >
