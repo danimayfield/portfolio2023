@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, BoxProps, Center, HStack, Link, Text } from '@chakra-ui/react';
-import { StyledText, TitleHeading } from '@shared/components';
+import { Container, StyledText, TitleHeading } from '@shared/components';
 import { linkHoverStyle } from '@shared';
 import { HeroColors } from '@shared/components/styled';
 
@@ -19,38 +19,39 @@ export const HomeHeroSection = ({ ...props }: HomeHeroSectionProps) => {
           </StyledText>
         </Box>
       </Center>
-
-      <HStack spacing="4" pl="2" mt={{ base: '35%', xl: '20%', '2xl': '15%' }}>
-        <Link
-          href="https://drive.google.com/file/d/18P5_n8lriWNs98pZEecMXcI6LWsyhheg/view?usp=sharing"
-          target="_blank"
-          textDecoration="underline"
-          zIndex={10}
-          {...linkHoverStyle}
-        >
-          resume
-        </Link>
-        <Text zIndex={10}> / </Text>
-        <Link
-          href="https://github.com/danimayfield"
-          target="_blank"
-          textDecoration="underline"
-          zIndex={10}
-          {...linkHoverStyle}
-        >
-          github
-        </Link>
-        <Text zIndex={10}> / </Text>
-        <Link
-          href="https://www.linkedin.com/in/daniella-mayfield-5a6a99222/"
-          target="_blank"
-          textDecoration="underline"
-          zIndex={10}
-          {...linkHoverStyle}
-        >
-          linkedIn
-        </Link>
-      </HStack>
+      <Container>
+        <HStack spacing="4" mt={{ base: '35%', xl: '20%', '2xl': '15%' }}>
+          <Link
+            href="https://drive.google.com/file/d/18P5_n8lriWNs98pZEecMXcI6LWsyhheg/view?usp=sharing"
+            target="_blank"
+            textDecoration="underline"
+            zIndex={10}
+            {...linkHoverStyle}
+          >
+            resume
+          </Link>
+          <Text zIndex={10}> / </Text>
+          <Link
+            href="https://github.com/danimayfield"
+            target="_blank"
+            textDecoration="underline"
+            zIndex={10}
+            {...linkHoverStyle}
+          >
+            github
+          </Link>
+          <Text zIndex={10}> / </Text>
+          <Link
+            href="https://www.linkedin.com/in/daniella-mayfield-5a6a99222/"
+            target="_blank"
+            textDecoration="underline"
+            zIndex={10}
+            {...linkHoverStyle}
+          >
+            linkedIn
+          </Link>
+        </HStack>
+      </Container>
     </HeroColors>
   );
 };

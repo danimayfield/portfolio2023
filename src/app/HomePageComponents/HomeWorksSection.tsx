@@ -13,7 +13,13 @@ import {
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { Project, projects } from './constants';
-import { MotionBox, MotionText, StyledCircle, StyledText } from '@shared';
+import {
+  Container,
+  MotionBox,
+  MotionText,
+  StyledCircle,
+  StyledText,
+} from '@shared';
 
 type HomeWorksSectionProps = BoxProps;
 
@@ -141,15 +147,16 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
 export const HomeWorksSection = ({ ...props }: HomeWorksSectionProps) => {
   return (
     <Box {...props}>
-      <StyledText
-        as="h2"
-        fontSize="6xl"
-        fontFamily="belleza"
-        textAlign="right"
-        mr="5%"
-      >
-        works
-      </StyledText>
+      <Container>
+        <StyledText
+          as="h2"
+          fontSize="6xl"
+          fontFamily="belleza"
+          textAlign="right"
+        >
+          works
+        </StyledText>
+      </Container>
       {projects.map((p, i) => (
         <NextLink key={p.id} href={p.route}>
           <ProjectItem project={p} index={i} />

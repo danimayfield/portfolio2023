@@ -16,7 +16,7 @@ export const HomePage = () => {
       <HomeHeroSection />
       <HomeContentSection mt="8%" mb="20%" />
       <HomeAboutSection mb="20%" />
-      <HomeWorksSection mb="5%" />
+      <HomeWorksSection />
       <HomeContactSection />
     </Box>
   );
