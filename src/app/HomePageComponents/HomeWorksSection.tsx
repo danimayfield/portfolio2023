@@ -11,6 +11,7 @@ import {
   Text,
   useTheme,
 } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import { Project, projects } from './constants';
 import { MotionBox, MotionText, StyledCircle, StyledText } from '@shared';
 
@@ -75,29 +76,31 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
             </Text>
           </MotionBox>
         </HStack>
-        <Flex alignItems="center" mr="5%">
+        <Flex alignItems="center" justifyContent="flex-end" mr="5%">
           {isHovered && (
             <MotionBox
               initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1, translateX: 60 }}
+              animate={{ opacity: 1, scale: 1, translateX: 20 }}
               transition={{ duration: 0.3 }}
-              zIndex={200}
+              zIndex={20}
               position="relative"
+              maxW="xs"
             >
               <Image
                 src={project.imageSrc}
                 alt={project.alt}
-                boxSize="3xs"
-                zIndex={203}
+                zIndex={30}
                 position="relative"
+                w="full"
+                h="full"
               />
               <StyledCircle
                 color={circleColor}
-                w="52"
-                h="52"
+                w="56"
+                h="56"
                 position="absolute"
                 top="5%"
-                left="5%"
+                right="10%"
                 zIndex={1}
               />
             </MotionBox>
@@ -107,9 +110,9 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
               translateX: isHovered ? -90 : undefined,
             }}
             position="relative"
-            zIndex={205}
+            zIndex={50}
           >
-            <Text color="blacks.800" px="5" position="relative" zIndex={205}>
+            <Text color="blacks.800" px="5" position="relative" zIndex={50}>
               View
             </Text>
             {isHovered && (
@@ -124,7 +127,7 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
                 position="absolute"
                 top="-1.5"
                 left="-1"
-                zIndex={204}
+                zIndex={40}
               />
             )}
           </MotionBox>
@@ -148,7 +151,9 @@ export const HomeWorksSection = ({ ...props }: HomeWorksSectionProps) => {
         works
       </StyledText>
       {projects.map((p, i) => (
-        <ProjectItem key={p.name} project={p} index={i} />
+        <NextLink key={p.id} href={p.route}>
+          <ProjectItem project={p} index={i} />
+        </NextLink>
       ))}
     </Box>
   );
