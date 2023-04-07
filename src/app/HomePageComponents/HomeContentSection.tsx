@@ -7,7 +7,13 @@ import {
   useTheme,
   VStack,
 } from '@chakra-ui/react';
-import { linkHoverStyle, MotionBox, StyledCircle, StyledText } from '@shared';
+import {
+  Container,
+  linkHoverStyle,
+  MotionBox,
+  StyledCircle,
+  StyledText,
+} from '@shared';
 
 type HomeContentSectionProp = BoxProps;
 
@@ -15,7 +21,7 @@ export const HomeContentSection = ({ ...props }: HomeContentSectionProp) => {
   const { colors } = useTheme();
   const labels = ['about', 'works', 'contact'];
   return (
-    <Box position="relative" overflowX="clip" px="4" pb="10" {...props}>
+    <Container position="relative" overflowX="clip" pb="10" {...props}>
       <Box
         position="absolute"
         borderTop="1px"
@@ -64,6 +70,6 @@ export const HomeContentSection = ({ ...props }: HomeContentSectionProp) => {
           })}
         </VStack>
       </Center>
-    </Box>
+    </Container>
   );
 };
