@@ -3,6 +3,7 @@ import {
   Box,
   BoxProps,
   Center,
+  Link,
   Text,
   useTheme,
   VStack,
@@ -51,10 +52,13 @@ export const HomeContentSection = ({ ...props }: HomeContentSectionProp) => {
             return (
               <Box
                 key={label}
+                as={Link}
                 pl={index === 2 ? { base: '40vw', md: '65vw' } : 0}
                 pr={index === 0 ? { base: '40vw', md: '65vw' } : 0}
                 cursor="pointer"
+                _hover={{ textDecoration: 'none' }}
                 zIndex={20}
+                href={`#${label}`}
               >
                 <Text fontSize="xs">0{index + 1}.</Text>
                 <StyledText

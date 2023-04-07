@@ -15,9 +15,9 @@ export const HomePage = () => {
     <Box as="main" bg="white">
       <HomeHeroSection />
       <HomeContentSection mt="8%" mb="20%" />
-      <HomeAboutSection mb="20%" />
-      <HomeWorksSection />
-      <HomeContactSection />
+      <HomeAboutSection mb="20%" id="about" />
+      <HomeWorksSection id="works" />
+      <HomeContactSection id="contact" />
     </Box>
   );
 };
