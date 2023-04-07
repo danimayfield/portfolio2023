@@ -7,7 +7,13 @@ type HomeAboutSectionProps = BoxProps;
 export const HomeAboutSection = ({ ...props }: HomeAboutSectionProps) => {
   return (
     <Box mx="20%" {...props}>
-      <StyledText as="h2" fontSize="6xl" fontFamily="belleza" zIndex={200}>
+      <StyledText
+        as="h2"
+        fontSize="6xl"
+        fontFamily="belleza"
+        zIndex={20}
+        position="relative"
+      >
         hi, i&apos;m dani
       </StyledText>
       <Text mx="15%" mt="10" lineHeight="">

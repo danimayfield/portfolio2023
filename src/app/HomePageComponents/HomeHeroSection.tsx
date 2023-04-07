@@ -1,47 +1,17 @@
 'use client';
-import React from 'react';
-import {
-  Box,
-  BoxProps,
-  Center,
-  HStack,
-  Link,
-  Text,
-  useTheme,
-} from '@chakra-ui/react';
-import { StyledCircle, StyledText, TitleHeading } from '@shared/components';
+
+import { Box, BoxProps, Center, HStack, Link, Text } from '@chakra-ui/react';
+import { StyledText, TitleHeading } from '@shared/components';
 import { linkHoverStyle } from '@shared';
+import { HeroColors } from '@shared/components/styled';
 
 type HomeHeroSectionProps = BoxProps;
 
 export const HomeHeroSection = ({ ...props }: HomeHeroSectionProps) => {
-  const { colors } = useTheme();
   return (
-    <Box position="relative" overflowX="clip" px="4" {...props}>
-      <StyledCircle
-        color={colors.pink[400]}
-        position="absolute"
-        top={-40}
-        left={-40}
-      />
-      <StyledCircle
-        color={colors.mint[400]}
-        position="absolute"
-        top={-5}
-        right={-250}
-        w="2xl"
-        h="2xl"
-      />
-      <StyledCircle
-        color={colors.sky[400]}
-        position="absolute"
-        top={550}
-        left={40}
-        w="md"
-        h="md"
-      />
+    <HeroColors {...props}>
       <Center>
-        <Box zIndex={100} mt="20%" ml="15%">
+        <Box zIndex={10} mt="20%" ml="15%">
           <TitleHeading as="h1">dani</TitleHeading>
           <TitleHeading as="h1">mayfield</TitleHeading>
           <StyledText mt="4">
@@ -55,32 +25,32 @@ export const HomeHeroSection = ({ ...props }: HomeHeroSectionProps) => {
           href="https://drive.google.com/file/d/18P5_n8lriWNs98pZEecMXcI6LWsyhheg/view?usp=sharing"
           target="_blank"
           textDecoration="underline"
-          zIndex={100}
+          zIndex={10}
           {...linkHoverStyle}
         >
           resume
         </Link>
-        <Text zIndex={100}> / </Text>
+        <Text zIndex={10}> / </Text>
         <Link
           href="https://github.com/danimayfield"
           target="_blank"
           textDecoration="underline"
-          zIndex={100}
+          zIndex={10}
           {...linkHoverStyle}
         >
           github
         </Link>
-        <Text zIndex={100}> / </Text>
+        <Text zIndex={10}> / </Text>
         <Link
           href="https://www.linkedin.com/in/daniella-mayfield-5a6a99222/"
           target="_blank"
           textDecoration="underline"
-          zIndex={100}
+          zIndex={10}
           {...linkHoverStyle}
         >
           linkedIn
         </Link>
       </HStack>
-    </Box>
+    </HeroColors>
   );
 };

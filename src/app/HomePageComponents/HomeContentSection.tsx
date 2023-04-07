@@ -7,7 +7,7 @@ import {
   useTheme,
   VStack,
 } from '@chakra-ui/react';
-import { linkHoverStyle, StyledCircle, StyledText } from '@shared';
+import { linkHoverStyle, MotionBox, StyledCircle, StyledText } from '@shared';
 
 type HomeContentSectionProp = BoxProps;
 
@@ -25,14 +25,20 @@ export const HomeContentSection = ({ ...props }: HomeContentSectionProp) => {
         left={{ base: '30', lg: '65' }}
         zIndex={0}
       />
-      <StyledCircle
-        color={colors.purple[400]}
+      <MotionBox
         position="absolute"
         top={85}
         right={-40}
-        w="2xs"
-        h="2xs"
-      />
+        animate={{ scale: 1.2 }}
+        transition={{
+          repeat: Infinity,
+          repeatType: 'reverse',
+          repeatDelay: 1,
+          duration: 3,
+        }}
+      >
+        <StyledCircle color={colors.purple[400]} w="2xs" h="2xs" />
+      </MotionBox>
       <Center pt="8%" mr={{ base: '10', lg: '32' }}>
         <VStack spacing="10">
           {labels.map((label, index) => {
@@ -42,13 +48,13 @@ export const HomeContentSection = ({ ...props }: HomeContentSectionProp) => {
                 pl={index === 2 ? { base: '40vw', md: '65vw' } : 0}
                 pr={index === 0 ? { base: '40vw', md: '65vw' } : 0}
                 cursor="pointer"
-                zIndex={200}
+                zIndex={20}
               >
                 <Text fontSize="xs">0{index + 1}.</Text>
                 <StyledText
                   fontSize="5xl"
                   fontFamily="belleza"
-                  zIndex={200}
+                  zIndex={20}
                   {...linkHoverStyle}
                 >
                   {label}
