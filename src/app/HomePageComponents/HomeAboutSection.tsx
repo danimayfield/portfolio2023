@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, BoxProps, Text } from '@chakra-ui/react';
 import { StyledText } from '@shared';
 
@@ -16,7 +15,7 @@ export const HomeAboutSection = ({ ...props }: HomeAboutSectionProps) => {
       >
         hi, i&apos;m dani
       </StyledText>
-      <Text mx="15%" mt="10" lineHeight="">
+      <Text maxW="lg" mx="auto" mt="10" lineHeight="tall">
         A front end developer with a passion for learning and growth. I believe
         that in this ever-changing industry, you can never stop pushing yourself
         to acquire new skills and knowledge. When I&apos;m not coding, I love to
