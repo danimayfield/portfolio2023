@@ -75,7 +75,7 @@ export const projectData: Record<Projects, ProjectData> = {
   },
   [Projects.AHL]: {
     name: 'Animal Health Link',
-    subtitle: 'a one-of-a-kind mental health and wellness app',
+    subtitle: 'vetrinary triage solutions for the modern vet industry',
     skills: [
       'react',
       'typescript',
@@ -86,9 +86,9 @@ export const projectData: Record<Projects, ProjectData> = {
       'dialpad integration',
     ],
     description:
-      'I was apart of the end to end development of this custom triage web application. I created features using react typescript & Chakra UI and working with a GraphQL/Apollo backend which used directus to help manage. The main feature of this app is a form flow that call center users must be able to navigate to any point in the flow easily. This app also features two-way communication via SMS enabling users to recieve texts & images from customers.',
+      'I was apart of the end to end development of this custom triage web application. I created features using react typescript & Chakra UI and working with a GraphQL/Apollo backend which used directus to help manage. The main feature of this app is a form flow that call center users must be able to navigate to any point in the flow easily in order to triage emergency situations. This app also features two-way communication via SMS enabling users to recieve texts & images from customers as well as handle phone calls with the integration of dialpad. This app also has a scheduling feature to ensure clinic calendars are up to date and a reporting feature where pdf reports are generated & can be saved or emailed to selected email addresses.',
     favourite:
-      'My favourite part about working on this project was implementing different customizations to make the use and flow of the application further tailored to the specific RVT agents that will be using it. Customizations include implementing a dark mode for users on the night shift as well as generating pdfs of submitted incidents that are easily shareable.',
+      'My favourite part about working on this project was implementing different customizations to make the use and flow of the application further tailored to the specific vetrinary technicians that will be using it. Customizations include implementing a dark mode for users on the night shift as well as generating pdfs of submitted incidents that are easily shareable.',
   },
   [Projects.FF]: {
     name: 'Fast Forward',
