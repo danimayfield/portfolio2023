@@ -105,7 +105,7 @@ export const Goals1And1Page = () => {
         <Container mt="16">
           <Flex flexDir={{ sm: 'row', base: 'column-reverse' }}>
             <motion.div style={{ opacity: opacityAnim2 }}>
-              <Box>
+              <Box mt={{ sm: '0', base: '10%' }}>
                 <StyledText as="h2" fontSize="6xl" fontFamily="belleza" mb="1">
                   favorite part
                 </StyledText>
