@@ -77,7 +77,7 @@ export const FastForwardPage = () => {
                   w={{ sm: '80%', base: '90%' }}
                 />
               </MotionBox>
-              <Box mt={{ sm: '25%', base: '10%' }}>
+              <Box mt={{ sm: '20%', base: '10%' }}>
                 <motion.div style={{ opacity: opacityAnim, flex: 1 }}>
                   <Box mb="16">
                     <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
