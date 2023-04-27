@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Box,
   BoxProps,
@@ -26,6 +26,8 @@ type HomeWorksSectionProps = BoxProps;
 type ProjectItemProps = FlexProps & { project: Project; index: number };
 
 const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
+  const isLargerThanTablet =
+    typeof window !== 'undefined' ? window.outerWidth > 768 : true;
   const { colors } = useTheme();
   const [isHovered, setIsHovered] = useState(false);
   const { name, skills } = project;
@@ -36,6 +38,53 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
       ? colors.pink[300]
       : colors.sky[400];
 
+  if (!isLargerThanTablet) {
+    return (
+      <>
+        <Flex
+          bg="blacks.50"
+          w="100%"
+          h="32"
+          alignContent="center"
+          justifyContent="space-between"
+          cursor="pointer"
+          {...props}
+        >
+          <Flex alignItems="center" flex="1">
+            <Box borderTop="1px" borderColor="blacks.400" w="20" flex="1" />
+
+            <Box color="blacks.500" flex="1" pl="5">
+              0{index + 1}
+            </Box>
+            <Box flex="4">
+              <Text color="blacks.700" fontWeight="semibold">
+                {name}
+              </Text>
+              <Text fontSize="2xs" color="blacks.500">
+                {skills.join(', ')}
+              </Text>
+            </Box>
+          </Flex>
+          <Flex alignItems="center" justifyContent="flex-end" mr="5%">
+            <Box position="relative" zIndex={50}>
+              <Text
+                color="blacks.800"
+                px="3"
+                position="relative"
+                bg={circleColor}
+                borderRadius="full"
+                py="2"
+                zIndex={50}
+              >
+                View
+              </Text>
+            </Box>
+          </Flex>
+        </Flex>
+        <Divider borderColor="blacks.100" zIndex={1} />
+      </>
+    );
+  }
   return (
     <>
       <Flex
@@ -56,7 +105,6 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
               borderColor="blacks.400"
               w="20"
               transition="ease"
-              scale={isHovered ? 2.2 : undefined}
             />
           </MotionBox>
           <MotionText
@@ -126,7 +174,7 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
-                bgColor="gray.200"
+                bgColor={circleColor}
                 w="110%"
                 h="9"
                 borderRadius="full"
