@@ -1,7 +1,6 @@
 'use client';
-import { Box, Flex, Icon, Image, Link, Text, useTheme } from '@chakra-ui/react';
+import { Box, Flex, Image, Text, useTheme } from '@chakra-ui/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { HiExternalLink } from 'react-icons/hi';
 import { projectData, Projects } from '@app/HomePageComponents';
 import { HeroColors } from '@shared/components/styled';
 import { Container, MotionBox, StyledText, TitleHeading } from '@shared';
@@ -13,7 +12,8 @@ export const AnimalHealthLinkPage = () => {
   const data = projectData[Projects.AHL];
   const { colors } = useTheme();
   const { scrollYProgress } = useScroll();
-  const isLargerThanMobile = window.outerWidth > 480;
+  const isLargerThanMobile =
+    typeof window !== 'undefined' ? window.outerWidth > 480 : true;
   const xPosAnimLarge = useTransform(
     scrollYProgress,
     [0, 0.15, 0.35],

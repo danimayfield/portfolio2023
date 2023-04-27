@@ -12,7 +12,8 @@ export const Goals1And1Page = () => {
   const data = projectData[Projects.G1AND1];
   const { colors } = useTheme();
   const { scrollYProgress } = useScroll();
-  const isLargerThanMobile = window.outerWidth > 480;
+  const isLargerThanMobile =
+    typeof window !== 'undefined' ? window.outerWidth > 480 : true;
   const xPosAnimLarge = useTransform(
     scrollYProgress,
     [0, 0.15, 0.35],
