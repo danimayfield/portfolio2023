@@ -1,7 +1,7 @@
 import { Box, Flex, Icon, Image, Link, Text, useTheme } from '@chakra-ui/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiExternalLink } from 'react-icons/hi';
-import { projectData, Projects } from '@app/HomePageComponents';
+import { ContactSection, projectData, Projects } from '@app/HomePageComponents';
 import { HeroColors } from '@shared/components/styled';
 import { Container, MotionBox, StyledText, TitleHeading } from '@shared';
 import FeaturedMockUp from '@shared/assets/1and1/mobile1.png';
@@ -158,6 +158,7 @@ export const Goals1And1Page = () => {
           </Flex>
         </Container>
       </Box>
+      <ContactSection />
     </Box>
   );
 };

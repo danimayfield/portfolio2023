@@ -7,7 +7,7 @@ import {
   HomeHeroSection,
   HomeAboutSection,
   HomeWorksSection,
-  HomeContactSection,
+  ContactSection,
 } from './HomePageComponents';
 
 export const HomePage = () => {
@@ -17,7 +17,7 @@ export const HomePage = () => {
       <HomeContentSection mt="8%" mb="20%" />
       <HomeAboutSection mb="20%" id="about" />
       <HomeWorksSection id="works" />
-      <HomeContactSection id="contact" />
+      <ContactSection id="contact" />
     </Box>
   );
 };

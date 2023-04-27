@@ -2,9 +2,9 @@ import { Box, BoxProps, Center, Link, Text } from '@chakra-ui/react';
 import { StyledText } from '@shared';
 import { ExternalLinkAnimation } from '@shared/animations/ExternalLinkAnimation';
 
-type HomeContactSectionProps = BoxProps;
+type ContactSectionProps = BoxProps;
 
-export const HomeContactSection = ({ ...props }: HomeContactSectionProps) => {
+export const ContactSection = ({ ...props }: ContactSectionProps) => {
   const emailAddress = 'danimmayfield@gmail.com';
   return (
     <Box py="5%" {...props}>
