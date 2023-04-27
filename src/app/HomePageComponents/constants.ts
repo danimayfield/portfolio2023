@@ -14,6 +14,7 @@ export type Project = {
 
 export type ProjectData = {
   name: string;
+  subtitle: string;
   skills: string[];
   description: string;
   favourite: string;
@@ -64,6 +65,7 @@ export const projects: Project[] = [
 export const projectData: Record<Projects, ProjectData> = {
   [Projects.G1AND1]: {
     name: '1AND1',
+    subtitle: 'a one-of-a-kind mental health and wellness app',
     skills: ['react native', 'typescript', 'redux', 'redux toolkit'],
     description:
       "I was apart of the end to end creation and deployment of the 1AND1 personal wellness app. As a V1 I implemented the redux state management to manage the data which is stored on the phone's local storage. As well as I developed all the features within the application in typescript react native using NativeBase's UI Framework.",
@@ -73,6 +75,7 @@ export const projectData: Record<Projects, ProjectData> = {
   },
   [Projects.AHL]: {
     name: 'Animal Health Link',
+    subtitle: 'a one-of-a-kind mental health and wellness app',
     skills: [
       'react',
       'typescript',
@@ -89,6 +92,7 @@ export const projectData: Record<Projects, ProjectData> = {
   },
   [Projects.FF]: {
     name: 'Fast Forward',
+    subtitle: 'a one-of-a-kind mental health and wellness app',
     skills: ['react', 'typescript', 'graphQL', 'apollo', 'mapbox'],
     description:
       "I was apart of the creation and development of Fast Forward's custom map application. This application uses Mapbox to display and manage Fast Forward's assets for the regions they service. I developed and customized the points on the map, adding ability to filter them based on different properties and developing search functionalty amoung other main features. This was all done within typescript react using Chakra UI and a graphQL & apollo backend.",

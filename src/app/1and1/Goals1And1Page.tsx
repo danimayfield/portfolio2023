@@ -12,44 +12,59 @@ export const Goals1And1Page = () => {
   const data = projectData[Projects.G1AND1];
   const { colors } = useTheme();
   const { scrollYProgress } = useScroll();
-  const xPosAnim = useTransform(
+  const isLargerThanMobile = window.outerWidth > 480;
+  const xPosAnimLarge = useTransform(
     scrollYProgress,
     [0, 0.15, 0.35],
     [300, 200, 0]
+  );
+  const xPosAnimSmall = useTransform(
+    scrollYProgress,
+    [0, 0.15, 0.35],
+    [100, 50, 0]
   );
   const opacityAnim = useTransform(
     scrollYProgress,
     [0, 0.2, 0.35],
     [0, 0.5, 1]
   );
-  const xPosAnim2 = useTransform(
+  const xPosAnim2Large = useTransform(
     scrollYProgress,
     [0.4, 0.6, 1],
     [-300, -50, 200]
   );
+  const xPosAnim2Small = useTransform(
+    scrollYProgress,
+    [0.4, 0.6, 1],
+    [100, 50, 0]
+  );
   const opacityAnim2 = useTransform(
     scrollYProgress,
-    [0.4, 0.65, 1],
+    [0.5, 0.65, 1],
     [0, 0.5, 1]
   );
 
-  const { name, description, favourite, skills, link } = data;
+  const { name, description, subtitle, favourite, skills, link } = data;
   return (
     <Box>
       <HomeNav />
-      <Box overflowX="clip">
+      <Box overflowX="clip" pb="12">
         <HeroColors color1={colors.sky[400]} color3={colors.gray[200]}>
           <Container>
             <Box mt="20%" mb="6">
               <TitleHeading as="h1" textAlign="center" mb="2">
                 {name} app
               </TitleHeading>
-              <StyledText textAlign="center">
-                a one-of-a-kind mental health and wellness app
-              </StyledText>
+              <StyledText textAlign="center">{subtitle}</StyledText>
             </Box>
-            <Flex>
-              <MotionBox style={{ translateX: xPosAnim }}>
+            <Flex flexDir={{ sm: 'row', base: 'column' }}>
+              <MotionBox
+                style={{
+                  translateX: isLargerThanMobile
+                    ? xPosAnimLarge
+                    : xPosAnimSmall,
+                }}
+              >
                 <Image
                   src={FeaturedMockUp.src}
                   alt="Mobile mock up of the 1and1 app home screen"
@@ -88,7 +103,7 @@ export const Goals1And1Page = () => {
           </Container>
         </HeroColors>
         <Container mt="16">
-          <Flex>
+          <Flex flexDir={{ sm: 'row', base: 'column-reverse' }}>
             <motion.div style={{ opacity: opacityAnim2 }}>
               <Box>
                 <StyledText as="h2" fontSize="6xl" fontFamily="belleza" mb="1">
@@ -126,7 +141,13 @@ export const Goals1And1Page = () => {
                 </Link>
               </Box>
             </motion.div>
-            <MotionBox style={{ translateX: xPosAnim2 }}>
+            <MotionBox
+              style={{
+                translateX: isLargerThanMobile
+                  ? xPosAnim2Large
+                  : xPosAnim2Small,
+              }}
+            >
               <Image
                 src={MockUp2.src}
                 alt="Mobile mock up of the 1and1 app calendar screen"
