@@ -92,11 +92,12 @@ export const projectData: Record<Projects, ProjectData> = {
   },
   [Projects.FF]: {
     name: 'Fast Forward',
-    subtitle: 'a one-of-a-kind mental health and wellness app',
+    subtitle:
+      'software and workflow solution for governing bodies to inspect & maintain electrical poles ',
     skills: ['react', 'typescript', 'graphQL', 'apollo', 'mapbox'],
     description:
-      "I was apart of the creation and development of Fast Forward's custom map application. This application uses Mapbox to display and manage Fast Forward's assets for the regions they service. I developed and customized the points on the map, adding ability to filter them based on different properties and developing search functionalty amoung other main features. This was all done within typescript react using Chakra UI and a graphQL & apollo backend.",
+      "I was apart of the creation and development of Fast Forward's custom map application. This application uses Mapbox to display and manage Fast Forward's assets for the regions they service. I developed and customized the points on the map, adding ability to filter them based on different properties and developing search functionalty amoung other main features. This app also had an administrative section where admins can upload images, assets and sources to the app and subsequently manage those uploads. This app has multiple layers to it and functionality that allows users to view and cycle through 360 images, thermal images and high resolution images. This was all done within typescript react using Chakra UI and a graphQL & apollo backend.",
     favourite:
-      'My favourite part about working on this project was getting to fully integrate the Mapbox API within a web application. As well as creating an admin area that allows for certain users to add new assets with different image types in bulk, set new map boundaries & publish map tiles that will display within the main application.',
+      'My favourite part about working on this project was getting to fully integrate the Mapbox API within a web application and creating all of the different layers to support all the different types of assets. As well as creating an admin area that allows for certain users to add new assets with different image types in bulk, set new map boundaries & publish map tiles that will display within the main application. This was my first time using Mapbox but really enjoyed the learning curve and feel proud of the end product.',
   },
 };
