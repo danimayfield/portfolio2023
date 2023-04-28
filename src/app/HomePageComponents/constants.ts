@@ -31,7 +31,7 @@ export const projects: Project[] = [
   {
     name: '1AND1',
     id: Projects.G1AND1,
-    skills: ['react native', 'typescript', 'redux', 'redux toolkit'],
+    skills: ['react native', 'typescript', 'nextJS', 'redux', 'redux toolkit'],
     imageSrc: Feature1and1.src,
     alt: 'Mobile mockup collage of 1and1 app',
     route: routes.goals1And1,
@@ -42,6 +42,7 @@ export const projects: Project[] = [
     skills: [
       'react',
       'typescript',
+      'nextJS',
       'graphQL',
       'apollo',
       'directus',
@@ -55,7 +56,7 @@ export const projects: Project[] = [
   {
     name: 'Fast Forward',
     id: Projects.FF,
-    skills: ['react', 'typescript', 'graphQL', 'apollo', 'mapbox'],
+    skills: ['react', 'typescript', 'nextJS', 'graphQL', 'apollo', 'mapbox'],
     imageSrc: FeatureFastForward.src,
     alt: 'Desktop mockup of Fast Forward Application',
     route: routes.fastForward,
@@ -66,7 +67,7 @@ export const projectData: Record<Projects, ProjectData> = {
   [Projects.G1AND1]: {
     name: '1AND1',
     subtitle: 'a one-of-a-kind mental health and wellness app',
-    skills: ['react native', 'typescript', 'redux', 'redux toolkit'],
+    skills: ['react native', 'typescript', 'nextJS', 'redux', 'redux toolkit'],
     description:
       "I was apart of the end to end creation and deployment of the 1AND1 personal wellness app. As a V1 I implemented the redux state management to manage the data which is stored on the phone's local storage. As well as I developed all the features within the application in typescript react native using NativeBase's UI Framework.",
     favourite:
@@ -79,6 +80,7 @@ export const projectData: Record<Projects, ProjectData> = {
     skills: [
       'react',
       'typescript',
+      'nextJS',
       'graphQL',
       'apollo',
       'directus',
@@ -94,7 +96,7 @@ export const projectData: Record<Projects, ProjectData> = {
     name: 'Fast Forward',
     subtitle:
       'software and workflow solution for governing bodies to inspect & maintain electrical poles ',
-    skills: ['react', 'typescript', 'graphQL', 'apollo', 'mapbox'],
+    skills: ['react', 'typescript', 'nextJS', 'graphQL', 'apollo', 'mapbox'],
     description:
       "I was apart of the creation and development of Fast Forward's custom map application. This application uses Mapbox to display and manage Fast Forward's assets for the regions they service. I developed and customized the points on the map, adding ability to filter them based on different properties and developing search functionalty amoung other main features. This app also had an administrative section where admins can upload images, assets and sources to the app and subsequently manage those uploads. This app has multiple layers to it and functionality that allows users to view and cycle through 360 images, thermal images and high resolution images. This was all done within typescript react using Chakra UI and a graphQL & apollo backend.",
     favourite:
