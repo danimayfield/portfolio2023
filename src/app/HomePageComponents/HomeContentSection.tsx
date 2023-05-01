@@ -22,30 +22,32 @@ export const HomeContentSection = ({ ...props }: HomeContentSectionProp) => {
   const { colors } = useTheme();
   const labels = ['about', 'works', 'contact'];
   return (
-    <Container position="relative" overflowX="clip" pb="10" {...props}>
-      <Box
-        position="absolute"
-        borderTop="1px"
-        borderRight="1px"
-        w="90%"
-        h="sm"
-        left={{ base: '30', lg: '65' }}
-        zIndex={0}
-      />
-      <MotionBox
-        position="absolute"
-        top={85}
-        right={-40}
-        animate={{ scale: 1.2 }}
-        transition={{
-          repeat: Infinity,
-          repeatType: 'reverse',
-          repeatDelay: 1,
-          duration: 3,
-        }}
-      >
-        <StyledCircle color={colors.purple[400]} w="2xs" h="2xs" />
-      </MotionBox>
+    <Container position="relative" mx="auto" pb="10" {...props}>
+      <Box position="absolute" top="0" left="0" overflowX="hidden" w="98.9vw">
+        <Box
+          position="relative"
+          borderTop="1px"
+          borderRight="1px"
+          w="90%"
+          h="sm"
+          left={{ base: '30', lg: '65' }}
+          zIndex={0}
+        />
+        <MotionBox
+          position="relative"
+          top={-230}
+          left="90%"
+          animate={{ scale: 1.2 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: 'reverse',
+            repeatDelay: 1,
+            duration: 3,
+          }}
+        >
+          <StyledCircle color={colors.purple[400]} w="3xs" h="3xs" />
+        </MotionBox>
+      </Box>
       <Center pt="8%" mr={{ base: '10', lg: '32' }}>
         <VStack spacing="10">
           {labels.map((label, index) => {

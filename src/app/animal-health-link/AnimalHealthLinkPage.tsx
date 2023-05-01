@@ -48,13 +48,13 @@ export const AnimalHealthLinkPage = () => {
   const { name, description, subtitle, favourite, skills } = data;
   return (
     <Box>
-      <HomeNav />
-      <Box overflowX="clip" pb="12">
+      <Box pb="12" overflowX="clip">
         <HeroColors
           color1={colors.sky[400]}
           color2={colors.purple[200]}
           color3={colors.gray[200]}
         >
+          <HomeNav />
           <Container>
             <Box mt="20%" mb="6">
               <TitleHeading as="h1" textAlign="center" mb="2">

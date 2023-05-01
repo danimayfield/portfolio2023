@@ -5,14 +5,13 @@ type HomeAboutSectionProps = BoxProps;
 
 export const HomeAboutSection = ({ ...props }: HomeAboutSectionProps) => {
   return (
-    <Box mx={{ md: '20%', base: '10%' }} {...props}>
-      <StyledText
-        as="h2"
-        fontSize="6xl"
-        fontFamily="belleza"
-        zIndex={20}
-        position="relative"
-      >
+    <Box
+      mx={{ md: '20%', base: '10%' }}
+      zIndex={20}
+      position="relative"
+      {...props}
+    >
+      <StyledText as="h2" fontSize="6xl" fontFamily="belleza">
         hi, i&apos;m dani
       </StyledText>
       <Text maxW="lg" mx="auto" mt="10" lineHeight="tall">
