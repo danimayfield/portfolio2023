@@ -7,6 +7,7 @@ import { Container, MotionBox, StyledText, TitleHeading } from '@shared';
 import FeaturedMockUp from '@shared/assets/1and1/mobile1.png';
 import MockUp2 from '@shared/assets/1and1/mobile2.png';
 import { HomeNav } from '@shared/components/HomeNav';
+import { ProjectFooterNavigation } from '@shared/components/ProjectFooterNavigation';
 
 export const Goals1And1Page = () => {
   const data = projectData[Projects.G1AND1];
@@ -175,6 +176,7 @@ export const Goals1And1Page = () => {
           </Container>
         </HeroColors>
       </Box>
+      <ProjectFooterNavigation nextProjectId={Projects.AHL} />
       <ContactSection />
     </Box>
   );
