@@ -7,10 +7,11 @@ import {
   Flex,
   FlexProps,
   HStack,
-  Image,
+  // Image,
   Text,
   useTheme,
 } from '@chakra-ui/react';
+import Image from 'next/image';
 import NextLink from 'next/link';
 import { Project, projects } from './constants';
 import {
@@ -143,10 +144,9 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
               <Image
                 src={project.imageSrc}
                 alt={project.alt}
-                zIndex={30}
-                position="relative"
-                w="full"
-                h="full"
+                width={300}
+                height={300}
+                style={{ zIndex: 30, position: 'relative' }}
               />
               <StyledCircle
                 color={circleColor}
