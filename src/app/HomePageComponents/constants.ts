@@ -19,6 +19,7 @@ export type ProjectData = {
   description: string;
   favourite: string;
   link?: string;
+  challenges?: string;
 };
 
 export enum Projects {
@@ -69,7 +70,9 @@ export const projectData: Record<Projects, ProjectData> = {
     subtitle: 'a one-of-a-kind mental health and wellness app',
     skills: ['react native', 'typescript', 'nextJS', 'redux', 'redux toolkit'],
     description:
-      "I was apart of the end to end creation and deployment of the 1AND1 personal wellness app. As a V1 I implemented the redux state management to manage the data which is stored on the phone's local storage. As well as I developed all the features within the application in typescript react native using NativeBase's UI Framework.",
+      "I was a foundational developer helping this start up launch their first product, the 1AND1 personal wellness app. As a V1 application I developed all the features within the application in typescript react native using NativeBase's UI Framework. As well as I gave advice on best practices for metadata and mobile developement.",
+    challenges:
+      "A challenge we faced throughout this projects was not having a backend database to hold user data. In lieu of this I implemented the redux state management to manage the data which is stored on the phone's local storage. We used this to store all the user data and progress as well as caching the articles from their wordpress blog for quicker loading times.",
     favourite:
       'I had two favourite parts working on this project. The first was implementing a performance enhancing event queue that saves user events to a queue and sends them periodically to machine learning to track how real users use the app to help influence new features. My second favourite piece of this project was being able to collaborate heavily with the design team due to staffing changes within the company. I really love being able to build a product that has a smooth & easy to use UI AND UX experience and one we can all be proud of',
     link: 'https://apps.apple.com/us/app/1and1/id6446096038',

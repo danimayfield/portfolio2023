@@ -31,21 +31,22 @@ export const Goals1And1Page = () => {
   );
   const xPosAnim2Large = useTransform(
     scrollYProgress,
-    [0.4, 0.6, 1],
+    [0.4, 0.5, 0.8],
     [-300, -50, 200]
   );
   const xPosAnim2Small = useTransform(
     scrollYProgress,
-    [0.4, 0.6, 1],
-    [100, 50, 0]
+    [0.3, 0.45, 0.6],
+    [150, 80, 0]
   );
   const opacityAnim2 = useTransform(
     scrollYProgress,
-    [0.5, 0.65, 1],
+    [0.4, 0.5, 0.7],
     [0, 0.5, 1]
   );
 
-  const { name, description, subtitle, favourite, skills, link } = data;
+  const { name, description, subtitle, favourite, skills, link, challenges } =
+    data;
   return (
     <Box>
       <Box pb="12" overflowX="clip">
@@ -107,6 +108,12 @@ export const Goals1And1Page = () => {
           <Flex flexDir={{ sm: 'row', base: 'column-reverse' }}>
             <motion.div style={{ opacity: opacityAnim2 }}>
               <Box mt={{ sm: '0', base: '10%' }}>
+                <StyledText as="h2" fontSize="6xl" fontFamily="belleza" mb="1">
+                  challenges
+                </StyledText>
+                <Text maxW="md" mb="16" lineHeight="taller">
+                  {challenges}
+                </Text>
                 <StyledText as="h2" fontSize="6xl" fontFamily="belleza" mb="1">
                   favorite part
                 </StyledText>
