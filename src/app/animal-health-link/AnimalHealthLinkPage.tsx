@@ -2,7 +2,11 @@
 import { Box, Flex, Image, Text, useTheme } from '@chakra-ui/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ContactSection, projectData, Projects } from '@app/HomePageComponents';
-import { HeroColors, ProjectNav } from '@shared/components';
+import {
+  HeroColors,
+  ProjectFooterNavigation,
+  ProjectNav,
+} from '@shared/components';
 import { Container, MotionBox, StyledText, TitleHeading } from '@shared';
 import FeaturedMockUp from '@shared/assets/ahl/laptop1.png';
 import MockUp2 from '@shared/assets/ahl/desktopCollage1.png';
@@ -152,6 +156,12 @@ export const AnimalHealthLinkPage = () => {
           </Container>
         </HeroColors>
       </Box>
+      <ProjectFooterNavigation
+        nextProjectId={Projects.FF}
+        prevProjectId={Projects.G1AND1}
+        nextColorScheme="mint"
+        prevColorScheme="pink"
+      />
       <ContactSection />
     </Box>
   );

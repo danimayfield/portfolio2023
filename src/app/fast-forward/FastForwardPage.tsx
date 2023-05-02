@@ -2,7 +2,11 @@
 import { Box, Flex, Image, Text, useTheme } from '@chakra-ui/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ContactSection, projectData, Projects } from '@app/HomePageComponents';
-import { HeroColors, ProjectNav } from '@shared/components';
+import {
+  HeroColors,
+  ProjectFooterNavigation,
+  ProjectNav,
+} from '@shared/components';
 import { Container, MotionBox, StyledText, TitleHeading } from '@shared';
 import FeaturedMockUp from '@shared/assets/fastForward/collage1.png';
 import MockUp2 from '@shared/assets/fastForward/laptop1.png';
@@ -142,6 +146,12 @@ export const FastForwardPage = () => {
           </Flex>
         </Container>
       </Box>
+      <ProjectFooterNavigation
+        nextProjectId={Projects.G1AND1}
+        prevProjectId={Projects.AHL}
+        nextColorScheme="pink"
+        prevColorScheme="sky"
+      />
       <ContactSection />
     </Box>
   );
