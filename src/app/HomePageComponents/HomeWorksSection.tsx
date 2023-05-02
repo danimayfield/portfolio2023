@@ -7,12 +7,12 @@ import {
   Flex,
   FlexProps,
   HStack,
-  Image,
   Text,
   useTheme,
 } from '@chakra-ui/react';
+import Image from 'next/image';
 import NextLink from 'next/link';
-import { Project, projects } from './constants';
+import { Project, projectTeasers } from './constants';
 import {
   Container,
   MotionBox,
@@ -143,10 +143,9 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
               <Image
                 src={project.imageSrc}
                 alt={project.alt}
-                zIndex={30}
-                position="relative"
-                w="full"
-                h="full"
+                width={300}
+                height={300}
+                style={{ zIndex: 30, position: 'relative' }}
               />
               <StyledCircle
                 color={circleColor}
@@ -205,7 +204,7 @@ export const HomeWorksSection = ({ ...props }: HomeWorksSectionProps) => {
           works
         </StyledText>
       </Container>
-      {projects.map((p, i) => (
+      {projectTeasers.map((p, i) => (
         <NextLink key={p.id} href={p.route}>
           <ProjectItem project={p} index={i} />
         </NextLink>

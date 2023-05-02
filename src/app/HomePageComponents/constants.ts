@@ -5,7 +5,7 @@ import FeatureFastForward from '@shared/assets/fastForward/desktop1.png';
 
 export type Project = {
   name: string;
-  id: string;
+  id: Projects;
   skills: string[];
   imageSrc: string;
   alt: string;
@@ -14,6 +14,7 @@ export type Project = {
 
 export type ProjectData = {
   name: string;
+  id: Projects;
   subtitle: string;
   skills: string[];
   description: string;
@@ -28,8 +29,8 @@ export enum Projects {
   FF = 'FF',
 }
 
-export const projects: Project[] = [
-  {
+export const projectTeasersData: Record<Projects, Project> = {
+  [Projects.G1AND1]: {
     name: '1AND1',
     id: Projects.G1AND1,
     skills: ['react native', 'typescript', 'nextJS', 'redux', 'redux toolkit'],
@@ -37,7 +38,7 @@ export const projects: Project[] = [
     alt: 'Mobile mockup collage of 1and1 app',
     route: routes.goals1And1,
   },
-  {
+  [Projects.AHL]: {
     name: 'Animal Health Link',
     id: Projects.AHL,
     skills: [
@@ -54,7 +55,7 @@ export const projects: Project[] = [
     alt: 'Tablet mockup Animal Health Link application',
     route: routes.animalHealthLink,
   },
-  {
+  [Projects.FF]: {
     name: 'Fast Forward',
     id: Projects.FF,
     skills: ['react', 'typescript', 'nextJS', 'graphQL', 'apollo', 'mapbox'],
@@ -62,11 +63,14 @@ export const projects: Project[] = [
     alt: 'Desktop mockup of Fast Forward Application',
     route: routes.fastForward,
   },
-];
+};
+
+export const projectTeasers: Project[] = Object.values(projectTeasersData);
 
 export const projectData: Record<Projects, ProjectData> = {
   [Projects.G1AND1]: {
     name: '1AND1',
+    id: Projects.G1AND1,
     subtitle: 'a one-of-a-kind mental health and wellness app',
     skills: ['react native', 'typescript', 'nextJS', 'redux', 'redux toolkit'],
     description:
@@ -79,6 +83,7 @@ export const projectData: Record<Projects, ProjectData> = {
   },
   [Projects.AHL]: {
     name: 'Animal Health Link',
+    id: Projects.AHL,
     subtitle: 'vetrinary triage solutions for the modern vet industry',
     skills: [
       'react',
@@ -99,6 +104,7 @@ export const projectData: Record<Projects, ProjectData> = {
   },
   [Projects.FF]: {
     name: 'Fast Forward',
+    id: Projects.FF,
     subtitle:
       'software and workflow solution for governing bodies to inspect & maintain electrical poles ',
     skills: ['react', 'typescript', 'nextJS', 'graphQL', 'apollo', 'mapbox'],

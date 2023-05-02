@@ -2,11 +2,14 @@
 import { Box, Flex, Image, Text, useTheme } from '@chakra-ui/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ContactSection, projectData, Projects } from '@app/HomePageComponents';
-import { HeroColors } from '@shared/components/styled';
+import {
+  HeroColors,
+  ProjectFooterNavigation,
+  ProjectNav,
+} from '@shared/components';
 import { Container, MotionBox, StyledText, TitleHeading } from '@shared';
 import FeaturedMockUp from '@shared/assets/ahl/laptop1.png';
 import MockUp2 from '@shared/assets/ahl/desktopCollage1.png';
-import { HomeNav } from '@shared/components/HomeNav';
 
 export const AnimalHealthLinkPage = () => {
   const data = projectData[Projects.AHL];
@@ -54,7 +57,7 @@ export const AnimalHealthLinkPage = () => {
           color2={colors.purple[200]}
           color3={colors.gray[200]}
         >
-          <HomeNav />
+          <ProjectNav />
           <Container>
             <Box mt="20%" mb="6">
               <TitleHeading as="h1" textAlign="center" mb="2">
@@ -153,6 +156,12 @@ export const AnimalHealthLinkPage = () => {
           </Container>
         </HeroColors>
       </Box>
+      <ProjectFooterNavigation
+        nextProjectId={Projects.FF}
+        prevProjectId={Projects.G1AND1}
+        nextColorScheme="mint"
+        prevColorScheme="pink"
+      />
       <ContactSection />
     </Box>
   );
