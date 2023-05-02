@@ -2,11 +2,10 @@ import { Box, Flex, Icon, Image, Link, Text, useTheme } from '@chakra-ui/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiExternalLink } from 'react-icons/hi';
 import { ContactSection, projectData, Projects } from '@app/HomePageComponents';
-import { HeroColors } from '@shared/components/styled';
+import { HeroColors, ProjectNav } from '@shared/components';
 import { Container, MotionBox, StyledText, TitleHeading } from '@shared';
 import FeaturedMockUp from '@shared/assets/1and1/mobile1.png';
 import MockUp2 from '@shared/assets/1and1/mobile2.png';
-import { HomeNav } from '@shared/components/HomeNav';
 import { ProjectFooterNavigation } from '@shared/components/ProjectFooterNavigation';
 
 export const Goals1And1Page = () => {
@@ -52,7 +51,7 @@ export const Goals1And1Page = () => {
     <Box>
       <Box pb="12" overflowX="clip">
         <HeroColors color1={colors.sky[400]} color3={colors.gray[200]}>
-          <HomeNav />
+          <ProjectNav />
           <Container>
             <Box mt="20%" mb="6">
               <TitleHeading as="h1" textAlign="center" mb="2">

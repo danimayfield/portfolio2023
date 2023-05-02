@@ -2,11 +2,10 @@
 import { Box, Flex, Image, Text, useTheme } from '@chakra-ui/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ContactSection, projectData, Projects } from '@app/HomePageComponents';
-import { HeroColors } from '@shared/components/styled';
+import { HeroColors, ProjectNav } from '@shared/components';
 import { Container, MotionBox, StyledText, TitleHeading } from '@shared';
 import FeaturedMockUp from '@shared/assets/fastForward/collage1.png';
 import MockUp2 from '@shared/assets/fastForward/laptop1.png';
-import { HomeNav } from '@shared/components/HomeNav';
 
 export const FastForwardPage = () => {
   const data = projectData[Projects.FF];
@@ -54,7 +53,7 @@ export const FastForwardPage = () => {
           color2={colors.gray[200]}
           color3={colors.sky[300]}
         >
-          <HomeNav />
+          <ProjectNav />
           <Container>
             <Box mt="20%" mb="6">
               <TitleHeading as="h1" textAlign="center" mb="2">
