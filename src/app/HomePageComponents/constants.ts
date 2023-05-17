@@ -33,7 +33,7 @@ export const projectTeasersData: Record<Projects, Project> = {
   [Projects.G1AND1]: {
     name: '1AND1',
     id: Projects.G1AND1,
-    skills: ['react native', 'typescript', 'nextJS', 'redux', 'redux toolkit'],
+    skills: ['react native', 'typescript', 'redux', 'redux toolkit'],
     imageSrc: Feature1and1.src,
     alt: 'Mobile mockup collage of 1and1 app',
     route: routes.goals1And1,
@@ -72,7 +72,7 @@ export const projectData: Record<Projects, ProjectData> = {
     name: '1AND1',
     id: Projects.G1AND1,
     subtitle: 'a one-of-a-kind mental health and wellness app',
-    skills: ['react native', 'typescript', 'nextJS', 'redux', 'redux toolkit'],
+    skills: ['react native', 'typescript', 'redux', 'redux toolkit'],
     description:
       "I was a foundational developer helping this start up launch their first product, the 1AND1 personal wellness app. As a V1 application I developed all the features within the application in typescript react native using NativeBase's UI Framework. As well as I gave advice on best practices for metadata and mobile developement.",
     challenges:
