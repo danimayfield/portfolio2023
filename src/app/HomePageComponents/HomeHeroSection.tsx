@@ -22,7 +22,7 @@ export const HomeHeroSection = ({ ...props }: HomeHeroSectionProps) => {
       <Container>
         <HStack spacing="4" mt={{ base: '35%', xl: '20%', '2xl': '15%' }}>
           <Link
-            href="https://drive.google.com/file/d/18P5_n8lriWNs98pZEecMXcI6LWsyhheg/view?usp=sharing"
+            href="https://drive.google.com/file/d/15y5sQN-_VRaeUuCbOas73483l3wHa2p5/view?usp=drive_link"
             target="_blank"
             textDecoration="underline"
             zIndex={10}
