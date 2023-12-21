@@ -20,7 +20,7 @@ export function HeroColors({
   const { colors } = useTheme();
   const [isLargerThanLg] = useMediaQuery('(min-width: 992px)');
   return (
-    <Box position="relative" marginX="auto" px="4" {...props}>
+    <Box position="relative" marginX="auto" {...props}>
       {/* Arbitrary max width to remove horizontal scroll */}
       <Box
         position="absolute"
