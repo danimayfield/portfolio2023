@@ -8,7 +8,6 @@ import {
   FlexProps,
   HStack,
   Text,
-  useTheme,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import NextLink from 'next/link';
@@ -28,15 +27,8 @@ type ProjectItemProps = FlexProps & { project: Project; index: number };
 const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
   const isLargerThanTablet =
     typeof window !== 'undefined' ? window.outerWidth > 768 : true;
-  const { colors } = useTheme();
   const [isHovered, setIsHovered] = useState(false);
-  const { name, skills } = project;
-  const circleColor =
-    index === 0
-      ? colors.mint[400]
-      : index === 2
-      ? colors.pink[300]
-      : colors.sky[400];
+  const { name, skills, color } = project;
 
   if (!isLargerThanTablet) {
     return (
@@ -71,7 +63,7 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
                 color="blacks.800"
                 px="3"
                 position="relative"
-                bg={circleColor}
+                bg={color}
                 borderRadius="full"
                 py="2"
                 zIndex={50}
@@ -148,7 +140,7 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
                 style={{ zIndex: 30, position: 'relative' }}
               />
               <StyledCircle
-                color={circleColor}
+                color={color}
                 w="56"
                 h="56"
                 position="absolute"
@@ -173,7 +165,7 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
-                bgColor={circleColor}
+                bgColor={color}
                 w="110%"
                 h="9"
                 borderRadius="full"
