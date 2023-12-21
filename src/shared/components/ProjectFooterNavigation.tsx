@@ -39,7 +39,7 @@ export const ProjectFooterNavigation = ({
     <Box w="full" overflowX="hidden" py="32">
       <Flex
         w="full"
-        justifyContent={prevProject ? 'space-between' : 'center'}
+        justifyContent={prevProject ? 'space-between' : 'flex-end'}
         bg="blacks.50"
         py="14"
         alignItems="center"
@@ -135,7 +135,7 @@ export const ProjectFooterNavigation = ({
               whileTap={{
                 scale: 1,
               }}
-              mr={prevProject ? '25%' : undefined}
+              mr="25%"
               position="relative"
               zIndex={20}
             >
