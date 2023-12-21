@@ -15,7 +15,7 @@ export const HomeAboutSection = ({ ...props }: HomeAboutSectionProps) => {
         hi, i&apos;m dani
       </StyledText>
       <Text maxW="lg" mx="auto" mt="10" lineHeight="tall">
-        A front end developer with a passion for learning and growth. I&apos;ve
+        A full stack developer with a passion for learning and growth. I&apos;ve
         launched multiple web and mobile based products for start-up businesses
         using{' '}
         <Text as="span" fontWeight="bold">
