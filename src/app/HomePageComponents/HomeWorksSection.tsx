@@ -187,7 +187,7 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
 
 export const HomeWorksSection = ({ ...props }: HomeWorksSectionProps) => {
   return (
-    <Box {...props}>
+    <Box mb="12" {...props}>
       <Container>
         <StyledText
           as="h2"
