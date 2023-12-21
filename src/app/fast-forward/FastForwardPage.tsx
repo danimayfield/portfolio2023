@@ -147,9 +147,9 @@ export const FastForwardPage = () => {
         </Container>
       </Box>
       <ProjectFooterNavigation
-        nextProjectId={Projects.G1AND1}
+        nextProjectId={Projects.Booker}
         prevProjectId={Projects.AHL}
-        nextColorScheme="pink"
+        nextColorScheme="orange"
         prevColorScheme="sky"
       />
       <ContactSection />
