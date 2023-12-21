@@ -2,6 +2,7 @@ import routes from '@app/routes';
 import Feature1and1 from '@shared/assets/1and1/mobileCollage1.png';
 import FeatureAHL from '@shared/assets/ahl/tablet1.png';
 import FeatureFastForward from '@shared/assets/fastForward/desktop1.png';
+import colors from '@theme/foundations/colors';
 
 export type Project = {
   name: string;
@@ -10,6 +11,7 @@ export type Project = {
   imageSrc: string;
   alt: string;
   route: string;
+  color: string;
 };
 
 export type ProjectData = {
@@ -27,6 +29,7 @@ export enum Projects {
   G1AND1 = '1AND1',
   AHL = 'AHL',
   FF = 'FF',
+  Booker = 'Booker',
 }
 
 export const projectTeasersData: Record<Projects, Project> = {
@@ -37,6 +40,7 @@ export const projectTeasersData: Record<Projects, Project> = {
     imageSrc: Feature1and1.src,
     alt: 'Mobile mockup collage of 1and1 app',
     route: routes.goals1And1,
+    color: colors.mint[400],
   },
   [Projects.AHL]: {
     name: 'Animal Health Link',
@@ -54,6 +58,7 @@ export const projectTeasersData: Record<Projects, Project> = {
     imageSrc: FeatureAHL.src,
     alt: 'Tablet mockup Animal Health Link application',
     route: routes.animalHealthLink,
+    color: colors.sky[400],
   },
   [Projects.FF]: {
     name: 'Fast Forward',
@@ -62,6 +67,28 @@ export const projectTeasersData: Record<Projects, Project> = {
     imageSrc: FeatureFastForward.src,
     alt: 'Desktop mockup of Fast Forward Application',
     route: routes.fastForward,
+    color: colors.pink[300],
+  },
+  [Projects.Booker]: {
+    name: 'Booker',
+    id: Projects.Booker,
+    skills: [
+      'react',
+      'typescript',
+      'node',
+      'express',
+      'apollo',
+      'graphQL',
+      'mongoDB',
+      'mongoose',
+      'sendGrid',
+      'stripe',
+    ],
+    // TODO: update this image
+    imageSrc: Feature1and1.src,
+    alt: 'Desktop mockup of the booker app',
+    route: routes.booker,
+    color: colors.orange[100],
   },
 };
 
@@ -114,5 +141,31 @@ export const projectData: Record<Projects, ProjectData> = {
       'A large challenge I faced was learning to integrate Mapbox into this application. Mapbox was new to me at the time and learning how to read and write with their syntax was integral in being able to create and stack multiple layers on the map to show different assets and images. Creating and being able to manipulate these layers were critical in customizing and adding the ability to filter different features on the map.',
     favourite:
       'My favourite part about working on this project was getting to fully integrate the Mapbox API within a web application and creating all of the different layers to support all the different types of assets. As well as creating an admin area that allows for certain users to add new assets with different image types in bulk, set new map boundaries & publish map tiles that will display within the main application. This was my first time using Mapbox but really enjoyed the learning curve and feel proud of the end product.',
+  },
+  [Projects.Booker]: {
+    name: 'Booker',
+    id: Projects.Booker,
+    subtitle:
+      'the game-changing booking engine that turns "just looking" into actual bookings for Destination Marketing Organizations and their members',
+    skills: [
+      'react',
+      'typescript',
+      'node',
+      'express',
+      'apollo',
+      'graphQL',
+      'mongoDB',
+      'mongoose',
+      'sendGrid API',
+      'stripe API',
+      'NPM package creation',
+    ],
+    description:
+      " I was the principal developer apart of the full redesign and front-end refactor of the primary Booker codebase, from a bespoke system to a fully reusable Saas product. I lead the creation and maintenance of a comprehensive custom design system built for Booker and it's related products. While managing multiple front end codebases for Booker and it's related products, I also became the primary developer managing the backend API powering Booker.",
+    challenges:
+      'The biggest challenge I had was creating a Saas product that could be so flexible it could be customized to make what acts like a bespoke booking engine for each individual business. Each business that uses Booker has vastly different products with vastly different needs and functionality requirements that all must be under a single codebase that can manage them all. I worked hard to organize the front and back end codebases meticulously to allow for each business to customize their Booker experience to what their business needs through the Booker administrative app. To do this, I took a lot of time to learn about each business and their needs and created avenues for different functionality to be reused for any business.',
+    favourite:
+      "My favourite part about creating and maintaining Booker and it's related products was creating something meaningful and useful that facilitated real revenue generation for Destination Marketing Organizations and their member businesses. We worked with real tourism operators throughout Canada and Booker played an integral role in the success of these small businesses as their preferred booking engine.",
+    // link: '',
   },
 };
