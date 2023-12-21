@@ -7,7 +7,7 @@ type ContactSectionProps = BoxProps;
 export const ContactSection = ({ ...props }: ContactSectionProps) => {
   const emailAddress = 'danimmayfield@gmail.com';
   return (
-    <Box py="5%" {...props}>
+    <Box pb="5%" {...props}>
       <Center flexDirection="column">
         <StyledText as="h2" fontSize="6xl" fontFamily="belleza" zIndex={200}>
           contact

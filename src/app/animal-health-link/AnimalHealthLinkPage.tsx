@@ -51,7 +51,7 @@ export const AnimalHealthLinkPage = () => {
   const { name, description, subtitle, favourite, skills, challenges } = data;
   return (
     <Box>
-      <Box pb="12" overflowX="clip">
+      <Box overflowX="clip">
         <HeroColors
           color1={colors.sky[400]}
           color2={colors.purple[200]}

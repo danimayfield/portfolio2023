@@ -51,7 +51,7 @@ export const FastForwardPage = () => {
   const { name, description, subtitle, favourite, skills, challenges } = data;
   return (
     <Box>
-      <Box pb="12" overflowX="clip">
+      <Box overflowX="clip">
         <HeroColors
           color1={colors.mint[300]}
           color2={colors.gray[200]}

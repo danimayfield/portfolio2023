@@ -49,7 +49,7 @@ export const Goals1And1Page = () => {
     data;
   return (
     <Box>
-      <Box pb="12" overflowX="clip">
+      <Box overflowX="clip">
         <HeroColors color1={colors.sky[400]} color3={colors.gray[200]}>
           <ProjectNav />
           <Container>
