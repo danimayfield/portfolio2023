@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import NextLink from 'next/link';
-import { Project, projectTeasers } from './constants';
+import { Project, Projects, projectTeasers } from './constants';
 import {
   Container,
   MotionBox,
@@ -29,6 +29,8 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
     typeof window !== 'undefined' ? window.outerWidth > 768 : true;
   const [isHovered, setIsHovered] = useState(false);
   const { name, skills, color } = project;
+
+  const isSmallerImage = name === Projects.Booker;
 
   if (!isLargerThanTablet) {
     return (
@@ -135,9 +137,9 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
               <Image
                 src={project.imageSrc}
                 alt={project.alt}
-                width={300}
-                height={300}
-                style={{ zIndex: 30, position: 'relative' }}
+                width={isSmallerImage ? 370 : 300}
+                height={isSmallerImage ? 370 : 300}
+                style={{ zIndex: 30, position: 'relative', maxWidth: 'unset' }}
               />
               <StyledCircle
                 color={color}
