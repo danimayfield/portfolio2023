@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Flex, Text, useTheme } from '@chakra-ui/react';
+import { Box, Flex, Text, useTheme } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import Image from 'next/image';
 import { MotionBox } from './motion-chakra';
@@ -28,48 +28,149 @@ export const ProjectFooterNavigation = ({
     : undefined;
   const nextProject = projectTeasersData[nextProjectId];
 
+  const isLargerThanTablet =
+    typeof window !== 'undefined' ? window.outerWidth > 768 : true;
   const isNextProjectHovered = isHovered === nextProjectId;
   const isPrevProjectHovered = isHovered === prevProjectId;
+  const prevCircleShade = prevColorScheme === 'orange' ? 100 : 400;
+  const nextCircleShade = nextColorScheme === 'orange' ? 100 : 400;
 
   return (
-    <Flex
-      w="full"
-      justifyContent={prevProject ? 'space-between' : 'flex-end'}
-      bg="blacks.50"
-      py="14"
-      alignItems="center"
-    >
-      {prevProject && (
+    <Box w="full" overflowX="hidden" py="32">
+      <Flex
+        w="full"
+        justifyContent={prevProject ? 'space-between' : 'center'}
+        bg="blacks.50"
+        py="14"
+        alignItems="center"
+      >
+        {prevProject && (
+          <NextLink
+            href={prevProject.route}
+            onMouseEnter={() =>
+              isLargerThanTablet && setIsHovered(prevProjectId ?? null)
+            }
+            onMouseLeave={() => isLargerThanTablet && setIsHovered(null)}
+          >
+            <Flex flexDir="row-reverse" position="relative">
+              {/* Hover animation: */}
+              <MotionBox
+                animate={{
+                  translateX: isPrevProjectHovered ? 250 : undefined,
+                  scale: isPrevProjectHovered ? 1.2 : undefined,
+                }}
+                whileTap={{
+                  scale: 1,
+                }}
+                ml="25%"
+                position="relative"
+                zIndex={20}
+              >
+                <Text color={colors[prevColorScheme][800]} fontWeight="bold">
+                  Go back:
+                </Text>
+                <Text color="blacks.700" fontWeight="semibold">
+                  {prevProject.name}
+                </Text>
+                <Text fontSize="2xs" maxW="sm" color="blacks.500">
+                  {prevProject.skills.join(', ')}
+                </Text>
+              </MotionBox>
+              {isPrevProjectHovered && (
+                <MotionBox
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                  }}
+                  transition={{ duration: 0.3 }}
+                  zIndex={10}
+                  top={-20}
+                  left={0}
+                  position="absolute"
+                  maxW="2xs"
+                >
+                  <Image
+                    src={prevProject.imageSrc}
+                    alt={prevProject.alt}
+                    width={280}
+                    height={280}
+                    style={{
+                      zIndex: 30,
+                      position: 'relative',
+                      maxWidth:
+                        nextProjectId === Projects.Booker ? 'unset' : undefined,
+                    }}
+                  />
+                  <StyledCircle
+                    color={colors[prevColorScheme][prevCircleShade]}
+                    w="48"
+                    h="48"
+                    position="absolute"
+                    top="5%"
+                    right="10%"
+                    zIndex={1}
+                  />
+                </MotionBox>
+              )}
+            </Flex>
+          </NextLink>
+        )}
         <NextLink
-          href={prevProject.route}
-          onMouseEnter={() => setIsHovered(prevProjectId ?? null)}
-          onMouseLeave={() => setIsHovered(null)}
+          href={nextProject.route}
+          onMouseEnter={() => isLargerThanTablet && setIsHovered(nextProjectId)}
+          onMouseLeave={() => isLargerThanTablet && setIsHovered(null)}
         >
-          <Flex flexDir="row-reverse" position="relative">
+          <Flex
+            flexDir="row"
+            position="relative"
+            pl={!prevProject && !isLargerThanTablet ? '8%' : undefined}
+          >
             {/* Hover animation: */}
             <MotionBox
               animate={{
-                translateX: isPrevProjectHovered ? 250 : undefined,
-                scale: isPrevProjectHovered ? 1.2 : undefined,
+                translateX: isNextProjectHovered ? -200 : undefined,
+                scale: isNextProjectHovered ? 1.2 : undefined,
               }}
               whileTap={{
                 scale: 1,
               }}
-              ml="25%"
+              mr={prevProject ? '25%' : undefined}
               position="relative"
               zIndex={20}
             >
-              <Text color={colors[prevColorScheme][800]} fontWeight="bold">
-                Go back:
-              </Text>
-              <Text color="blacks.700" fontWeight="semibold">
-                {prevProject.name}
-              </Text>
-              <Text fontSize="2xs" color="blacks.500">
-                {prevProject.skills.join(', ')}
-              </Text>
+              {/* Bounce animation to entice user to click */}
+              <MotionBox
+                animate={{ scale: 1.1 }}
+                transition={{
+                  duration: 0.3,
+                  ease: 'backInOut',
+                  scale: {
+                    repeat: Infinity,
+                    repeatDelay: 2,
+                    type: 'spring',
+                    damping: 5,
+                    stiffness: 150,
+                    restDelta: 0.001,
+                  },
+                }}
+              >
+                <Text color={colors[nextColorScheme][800]} fontWeight="bold">
+                  Go to next:
+                </Text>
+                <Text color="blacks.700" fontWeight="semibold">
+                  {nextProject.name}
+                </Text>
+                <Text
+                  fontSize="2xs"
+                  maxW={isLargerThanTablet ? 'sm' : 'xs'}
+                  color="blacks.500"
+                >
+                  {nextProject.skills.join(', ')}
+                </Text>
+              </MotionBox>
             </MotionBox>
-            {isPrevProjectHovered && (
+            {isNextProjectHovered && (
               <MotionBox
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{
@@ -79,19 +180,24 @@ export const ProjectFooterNavigation = ({
                 transition={{ duration: 0.3 }}
                 zIndex={10}
                 top={-20}
-                left={0}
+                right={0}
                 position="absolute"
                 maxW="2xs"
               >
                 <Image
-                  src={prevProject.imageSrc}
-                  alt={prevProject.alt}
-                  width={300}
-                  height={300}
-                  style={{ zIndex: 30, position: 'relative' }}
+                  src={nextProject.imageSrc}
+                  alt={nextProject.alt}
+                  width={280}
+                  height={280}
+                  style={{
+                    zIndex: 30,
+                    position: 'relative',
+                    maxWidth:
+                      nextProjectId === Projects.Booker ? 'unset' : undefined,
+                  }}
                 />
                 <StyledCircle
-                  color={colors[prevColorScheme][400]}
+                  color={colors[nextColorScheme][nextCircleShade]}
                   w="48"
                   h="48"
                   position="absolute"
@@ -103,87 +209,7 @@ export const ProjectFooterNavigation = ({
             )}
           </Flex>
         </NextLink>
-      )}
-      <NextLink
-        href={nextProject.route}
-        onMouseEnter={() => setIsHovered(nextProjectId)}
-        onMouseLeave={() => setIsHovered(null)}
-      >
-        <Flex flexDir="row" position="relative">
-          {/* Hover animation: */}
-          <MotionBox
-            animate={{
-              translateX: isNextProjectHovered ? -250 : undefined,
-              scale: isNextProjectHovered ? 1.2 : undefined,
-            }}
-            whileTap={{
-              scale: 1,
-            }}
-            mr="25%"
-            position="relative"
-            zIndex={20}
-          >
-            {/* Bounce animation to entice user to click */}
-            <MotionBox
-              animate={{ scale: 1.1 }}
-              transition={{
-                duration: 0.3,
-                ease: 'backInOut',
-                scale: {
-                  repeat: Infinity,
-                  repeatDelay: 2,
-                  type: 'spring',
-                  damping: 5,
-                  stiffness: 150,
-                  restDelta: 0.001,
-                },
-              }}
-            >
-              <Text color={colors[nextColorScheme][800]} fontWeight="bold">
-                Go to next:
-              </Text>
-              <Text color="blacks.700" fontWeight="semibold">
-                {nextProject.name}
-              </Text>
-              <Text fontSize="2xs" color="blacks.500">
-                {nextProject.skills.join(', ')}
-              </Text>
-            </MotionBox>
-          </MotionBox>
-          {isNextProjectHovered && (
-            <MotionBox
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-              }}
-              transition={{ duration: 0.3 }}
-              zIndex={10}
-              top={-20}
-              right={0}
-              position="absolute"
-              maxW="2xs"
-            >
-              <Image
-                src={nextProject.imageSrc}
-                alt={nextProject.alt}
-                width={300}
-                height={300}
-                style={{ zIndex: 30, position: 'relative' }}
-              />
-              <StyledCircle
-                color={colors[nextColorScheme][400]}
-                w="48"
-                h="48"
-                position="absolute"
-                top="5%"
-                right="10%"
-                zIndex={1}
-              />
-            </MotionBox>
-          )}
-        </Flex>
-      </NextLink>
-    </Flex>
+      </Flex>
+    </Box>
   );
 };
