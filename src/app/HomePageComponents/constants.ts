@@ -2,6 +2,7 @@ import routes from '@app/routes';
 import Feature1and1 from '@shared/assets/1and1/mobileCollage1.png';
 import FeatureAHL from '@shared/assets/ahl/tablet1.png';
 import FeatureFastForward from '@shared/assets/fastForward/desktop1.png';
+import FeaturedBooker from '@shared/assets/booker/laptop.png';
 import colors from '@theme/foundations/colors';
 
 export type Project = {
@@ -75,18 +76,16 @@ export const projectTeasersData: Record<Projects, Project> = {
     skills: [
       'react',
       'typescript',
+      'stencil',
       'node',
       'express',
       'apollo',
       'graphQL',
       'mongoDB',
       'mongoose',
-      'sendGrid',
-      'stripe',
     ],
-    // TODO: update this image
-    imageSrc: Feature1and1.src,
-    alt: 'Desktop mockup of the booker app',
+    imageSrc: FeaturedBooker.src,
+    alt: 'Laptop mockup of the booker launcher app',
     route: routes.booker,
     color: colors.orange[100],
   },
@@ -150,6 +149,7 @@ export const projectData: Record<Projects, ProjectData> = {
     skills: [
       'react',
       'typescript',
+      'stencil',
       'node',
       'express',
       'apollo',
@@ -161,11 +161,11 @@ export const projectData: Record<Projects, ProjectData> = {
       'NPM package creation',
     ],
     description:
-      " I was the principal developer apart of the full redesign and front-end refactor of the primary Booker codebase, from a bespoke system to a fully reusable Saas product. I lead the creation and maintenance of a comprehensive custom design system built for Booker and it's related products. While managing multiple front end codebases for Booker and it's related products, I also became the primary developer managing the backend API powering Booker.",
+      " I was the principal developer apart of the full redesign and front-end refactor of the primary Booker codebase, from a bespoke system to a fully reusable Saas product. Booker is a fully embeddable booking modal that can be embedded on any site. I also lead the creation and maintenance of a comprehensive custom design system built for Booker and it's related products. While managing multiple front end codebases for Booker and it's related products, I also became the primary developer managing the backend API that powers Booker!",
     challenges:
       'The biggest challenge I had was creating a Saas product that could be so flexible it could be customized to make what acts like a bespoke booking engine for each individual business. Each business that uses Booker has vastly different products with vastly different needs and functionality requirements that all must be under a single codebase that can manage them all. I worked hard to organize the front and back end codebases meticulously to allow for each business to customize their Booker experience to what their business needs through the Booker administrative app. To do this, I took a lot of time to learn about each business and their needs and created avenues for different functionality to be reused for any business.',
     favourite:
-      "My favourite part about creating and maintaining Booker and it's related products was creating something meaningful and useful that facilitated real revenue generation for Destination Marketing Organizations and their member businesses. We worked with real tourism operators throughout Canada and Booker played an integral role in the success of these small businesses as their preferred booking engine.",
-    // link: '',
+      "My favourite part about creating and maintaining Booker and it's related products was creating something meaningful and useful that facilitated real revenue generation for Destination Marketing Organizations and their member businesses. We worked with real tourism operators throughout Canada and Booker played an integral role in the success of these small businesses as their preferred booking engine. Another big favourite part of mine was creating a custom calendar component for Booker from scratch, to be used in multiple different ways with multiple different functionalities.",
+    link: 'https://www.tourism.tech/booker-dmo',
   },
 };
