@@ -15,7 +15,7 @@ export const HomeHeroSection = ({ ...props }: HomeHeroSectionProps) => {
           <TitleHeading as="h1">dani</TitleHeading>
           <TitleHeading as="h1">mayfield</TitleHeading>
           <StyledText mt="4">
-            a passionate front end developer based in ontario, canada.
+            a passionate full stack developer based in ontario, canada.
           </StyledText>
         </Box>
       </Center>
