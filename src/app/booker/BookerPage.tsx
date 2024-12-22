@@ -42,7 +42,7 @@ export const BookerPage = () => {
   );
   const opacityAnim = useTransform(
     scrollYProgress,
-    [0, 0.15, 0.3],
+    [0, 0.15, 0.25],
     [0, 0.5, 1]
   );
   const opacityAnimSmall = useTransform(

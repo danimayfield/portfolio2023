@@ -35,7 +35,7 @@ export const FastForwardPage = () => {
   );
   const opacityAnim = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.35],
+    [0, 0.15, 0.25],
     [0, 0.5, 1]
   );
   const xPosAnim2Large = useTransform(
