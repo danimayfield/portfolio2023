@@ -49,47 +49,32 @@ export const Goals1And1Page = () => {
     data;
   return (
     <Box>
-      <Box overflowX="clip">
-        <HeroColors color1={colors.sky[400]} color3={colors.gray[200]}>
-          <ProjectNav />
-          <Container>
-            <Box mt="20%" mb="6">
-              <TitleHeading as="h1" textAlign="center" mb="2">
-                {name} app
-              </TitleHeading>
-              <StyledText textAlign="center">{subtitle}</StyledText>
-            </Box>
-            <Flex flexDir={{ sm: 'row', base: 'column' }}>
-              <MotionBox
-                style={{
-                  translateX: isLargerThanMobile
-                    ? xPosAnimLarge
-                    : xPosAnimSmall,
-                }}
-              >
-                <Image
-                  src={FeaturedMockUp.src}
-                  alt="Mobile mock up of the 1and1 app home screen"
-                  w={{ md: '70%', base: '80%' }}
-                />
-              </MotionBox>
-              <Box mt={{ sm: '25%', base: '10%' }}>
-                <motion.div style={{ opacity: opacityAnim }}>
-                  <Box mb="16">
-                    <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
-                      about
-                    </StyledText>
-                    <Text
-                      maxW="md"
-                      ml="auto"
-                      textAlign="right"
-                      lineHeight="taller"
-                    >
-                      {description}
-                    </Text>
-                  </Box>
+      <HeroColors color1={colors.sky[400]} color3={colors.gray[200]}>
+        <ProjectNav />
+        <Container>
+          <Box mt="20%" mb="6">
+            <TitleHeading as="h1" textAlign="center" mb="2">
+              {name} app
+            </TitleHeading>
+            <StyledText textAlign="center">{subtitle}</StyledText>
+          </Box>
+          <Flex flexDir={{ sm: 'row', base: 'column' }}>
+            <MotionBox
+              style={{
+                translateX: isLargerThanMobile ? xPosAnimLarge : xPosAnimSmall,
+              }}
+            >
+              <Image
+                src={FeaturedMockUp.src}
+                alt="Mobile mock up of the 1and1 app home screen"
+                w={{ md: '70%', base: '80%' }}
+              />
+            </MotionBox>
+            <Box mt={{ sm: '25%', base: '10%' }}>
+              <motion.div style={{ opacity: opacityAnim }}>
+                <Box mb="16">
                   <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
-                    tech
+                    about
                   </StyledText>
                   <Text
                     maxW="md"
@@ -97,84 +82,90 @@ export const Goals1And1Page = () => {
                     textAlign="right"
                     lineHeight="taller"
                   >
-                    {skills.join('  |  ')}
+                    {description}
                   </Text>
-                </motion.div>
-              </Box>
-            </Flex>
-            <Box mt="16">
-              <Flex flexDir={{ sm: 'row', base: 'column-reverse' }}>
-                <motion.div style={{ opacity: opacityAnim2 }}>
-                  <Box mt={{ sm: '0', base: '10%' }}>
-                    <StyledText
-                      as="h2"
-                      fontSize="6xl"
-                      fontFamily="belleza"
-                      mb="1"
-                    >
-                      challenges
-                    </StyledText>
-                    <Text maxW="md" mb="16" lineHeight="taller">
-                      {challenges}
-                    </Text>
-                    <StyledText
-                      as="h2"
-                      fontSize="6xl"
-                      fontFamily="belleza"
-                      mb="1"
-                    >
-                      favorite part
-                    </StyledText>
-                    <Text maxW="md" mb="16" lineHeight="taller">
-                      {favourite}
-                    </Text>
-                    <Link
-                      href={link}
-                      _hover={{
-                        textDecoration: 'none',
-                        color: 'sky.600',
-                        transition: 'ease',
-                        transitionDuration: '200ms',
-                        transitionProperty: 'color',
-                      }}
-                      target="_blank"
-                    >
-                      <Text
-                        fontFamily="belleza"
-                        fontSize="6xl"
-                        mb="1"
-                        display="inline"
-                      >
-                        try it
-                      </Text>
-                      <Icon
-                        as={HiExternalLink}
-                        display="inline"
-                        ml="2"
-                        w="10"
-                        h="10"
-                      />
-                    </Link>
-                  </Box>
-                </motion.div>
-                <MotionBox
-                  style={{
-                    translateX: isLargerThanMobile
-                      ? xPosAnim2Large
-                      : xPosAnim2Small,
-                  }}
-                >
-                  <Image
-                    src={MockUp2.src}
-                    alt="Mobile mock up of the 1and1 app calendar screen"
-                    w="50%"
-                  />
-                </MotionBox>
-              </Flex>
+                </Box>
+                <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
+                  tech
+                </StyledText>
+                <Text maxW="md" ml="auto" textAlign="right" lineHeight="taller">
+                  {skills.join('  |  ')}
+                </Text>
+              </motion.div>
             </Box>
-          </Container>
-        </HeroColors>
-      </Box>
+          </Flex>
+          <Box mt="16">
+            <Flex flexDir={{ sm: 'row', base: 'column-reverse' }}>
+              <motion.div style={{ opacity: opacityAnim2 }}>
+                <Box mt={{ sm: '0', base: '10%' }}>
+                  <StyledText
+                    as="h2"
+                    fontSize="6xl"
+                    fontFamily="belleza"
+                    mb="1"
+                  >
+                    challenges
+                  </StyledText>
+                  <Text maxW="md" mb="16" lineHeight="taller">
+                    {challenges}
+                  </Text>
+                  <StyledText
+                    as="h2"
+                    fontSize="6xl"
+                    fontFamily="belleza"
+                    mb="1"
+                  >
+                    favorite part
+                  </StyledText>
+                  <Text maxW="md" mb="16" lineHeight="taller">
+                    {favourite}
+                  </Text>
+                  <Link
+                    href={link}
+                    _hover={{
+                      textDecoration: 'none',
+                      color: 'sky.600',
+                      transition: 'ease',
+                      transitionDuration: '200ms',
+                      transitionProperty: 'color',
+                    }}
+                    target="_blank"
+                  >
+                    <Text
+                      fontFamily="belleza"
+                      fontSize="6xl"
+                      mb="1"
+                      display="inline"
+                    >
+                      try it
+                    </Text>
+                    <Icon
+                      as={HiExternalLink}
+                      display="inline"
+                      ml="2"
+                      w="10"
+                      h="10"
+                    />
+                  </Link>
+                </Box>
+              </motion.div>
+              <MotionBox
+                style={{
+                  translateX: isLargerThanMobile
+                    ? xPosAnim2Large
+                    : xPosAnim2Small,
+                }}
+              >
+                <Image
+                  src={MockUp2.src}
+                  alt="Mobile mock up of the 1and1 app calendar screen"
+                  w="50%"
+                />
+              </MotionBox>
+            </Flex>
+          </Box>
+        </Container>
+      </HeroColors>
       <ProjectFooterNavigation nextProjectId={Projects.AHL} />
       <ContactSection />
     </Box>

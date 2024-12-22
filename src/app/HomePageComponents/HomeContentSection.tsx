@@ -22,8 +22,8 @@ export const HomeContentSection = ({ ...props }: HomeContentSectionProp) => {
   const { colors } = useTheme();
   const labels = ['about', 'works', 'contact'];
   return (
-    <Container position="relative" mx="auto" pb="10" {...props}>
-      <Box position="absolute" top="0" left="0" overflowX="hidden" w="98.9vw">
+    <Container w="100%" pb="10" {...props}>
+      <Box position="absolute" top="0" left="0" overflowX="hidden" w="100%">
         <Box
           position="relative"
           borderTop="1px"
@@ -48,6 +48,7 @@ export const HomeContentSection = ({ ...props }: HomeContentSectionProp) => {
           <StyledCircle color={colors.purple[400]} w="3xs" h="3xs" />
         </MotionBox>
       </Box>
+
       <Center pt="8%" mr={{ base: '10', lg: '32' }}>
         <VStack spacing="10">
           {labels.map((label, index) => {

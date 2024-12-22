@@ -51,52 +51,37 @@ export const AnimalHealthLinkPage = () => {
   const { name, description, subtitle, favourite, skills, challenges } = data;
   return (
     <Box>
-      <Box overflowX="clip">
-        <HeroColors
-          color1={colors.sky[400]}
-          color2={colors.purple[200]}
-          color3={colors.gray[200]}
-        >
-          <ProjectNav />
-          <Container>
-            <Box mt="20%" mb="6">
-              <TitleHeading as="h1" textAlign="center" mb="2">
-                {name}
-              </TitleHeading>
-              <StyledText textAlign="center">{subtitle}</StyledText>
-            </Box>
-            <Flex flexDir={{ sm: 'row', base: 'column' }}>
-              <MotionBox
-                style={{
-                  translateX: isLargerThanMobile
-                    ? xPosAnimLarge
-                    : xPosAnimSmall,
-                }}
-                flex="1"
-              >
-                <Image
-                  src={FeaturedMockUp.src}
-                  alt="Laptop mock up of the animal health link triage app"
-                  w="80%"
-                />
-              </MotionBox>
-              <Box mt={{ sm: '25%', base: '10%' }}>
-                <motion.div style={{ opacity: opacityAnim, flex: 1 }}>
-                  <Box mb="16">
-                    <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
-                      about
-                    </StyledText>
-                    <Text
-                      maxW="md"
-                      ml="auto"
-                      textAlign="right"
-                      lineHeight="taller"
-                    >
-                      {description}
-                    </Text>
-                  </Box>
+      <HeroColors
+        color1={colors.sky[400]}
+        color2={colors.purple[200]}
+        color3={colors.gray[200]}
+      >
+        <ProjectNav />
+        <Container>
+          <Box mt="20%" mb="6">
+            <TitleHeading as="h1" textAlign="center" mb="2">
+              {name}
+            </TitleHeading>
+            <StyledText textAlign="center">{subtitle}</StyledText>
+          </Box>
+          <Flex flexDir={{ sm: 'row', base: 'column' }}>
+            <MotionBox
+              style={{
+                translateX: isLargerThanMobile ? xPosAnimLarge : xPosAnimSmall,
+              }}
+              flex="1"
+            >
+              <Image
+                src={FeaturedMockUp.src}
+                alt="Laptop mock up of the animal health link triage app"
+                w="80%"
+              />
+            </MotionBox>
+            <Box mt={{ sm: '25%', base: '10%' }}>
+              <motion.div style={{ opacity: opacityAnim, flex: 1 }}>
+                <Box mb="16">
                   <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
-                    tech
+                    about
                   </StyledText>
                   <Text
                     maxW="md"
@@ -104,58 +89,64 @@ export const AnimalHealthLinkPage = () => {
                     textAlign="right"
                     lineHeight="taller"
                   >
-                    {skills.join('  |  ')}
+                    {description}
                   </Text>
-                </motion.div>
-              </Box>
-            </Flex>
-            <Box mt="16">
-              <Flex flexDir={{ sm: 'row', base: 'column-reverse' }}>
-                <motion.div style={{ opacity: opacityAnim2 }}>
-                  <Box mt={{ sm: '0', base: '10%' }}>
-                    <StyledText
-                      as="h2"
-                      fontSize="6xl"
-                      fontFamily="belleza"
-                      mb="1"
-                    >
-                      challenges
-                    </StyledText>
-                    <Text maxW="md" mb="16" lineHeight="taller">
-                      {challenges}
-                    </Text>
-                    <StyledText
-                      as="h2"
-                      fontSize="6xl"
-                      fontFamily="belleza"
-                      mb="1"
-                    >
-                      favorite part
-                    </StyledText>
-                    <Text maxW="md" mb="16" lineHeight="taller">
-                      {favourite}
-                    </Text>
-                  </Box>
-                </motion.div>
-                <MotionBox
-                  style={{
-                    translateX: isLargerThanMobile
-                      ? xPosAnim2Large
-                      : xPosAnim2Small,
-                  }}
-                  flex="1"
-                >
-                  <Image
-                    src={MockUp2.src}
-                    alt="Desktop collage mock up of the animal health link app"
-                    w="80%"
-                  />
-                </MotionBox>
-              </Flex>
+                </Box>
+                <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
+                  tech
+                </StyledText>
+                <Text maxW="md" ml="auto" textAlign="right" lineHeight="taller">
+                  {skills.join('  |  ')}
+                </Text>
+              </motion.div>
             </Box>
-          </Container>
-        </HeroColors>
-      </Box>
+          </Flex>
+          <Box mt="16">
+            <Flex flexDir={{ sm: 'row', base: 'column-reverse' }}>
+              <motion.div style={{ opacity: opacityAnim2 }}>
+                <Box mt={{ sm: '0', base: '10%' }}>
+                  <StyledText
+                    as="h2"
+                    fontSize="6xl"
+                    fontFamily="belleza"
+                    mb="1"
+                  >
+                    challenges
+                  </StyledText>
+                  <Text maxW="md" mb="16" lineHeight="taller">
+                    {challenges}
+                  </Text>
+                  <StyledText
+                    as="h2"
+                    fontSize="6xl"
+                    fontFamily="belleza"
+                    mb="1"
+                  >
+                    favorite part
+                  </StyledText>
+                  <Text maxW="md" mb="16" lineHeight="taller">
+                    {favourite}
+                  </Text>
+                </Box>
+              </motion.div>
+              <MotionBox
+                style={{
+                  translateX: isLargerThanMobile
+                    ? xPosAnim2Large
+                    : xPosAnim2Small,
+                }}
+                flex="1"
+              >
+                <Image
+                  src={MockUp2.src}
+                  alt="Desktop collage mock up of the animal health link app"
+                  w="80%"
+                />
+              </MotionBox>
+            </Flex>
+          </Box>
+        </Container>
+      </HeroColors>
       <ProjectFooterNavigation
         nextProjectId={Projects.FF}
         prevProjectId={Projects.G1AND1}

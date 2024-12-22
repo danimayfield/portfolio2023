@@ -61,57 +61,40 @@ export const BookerPage = () => {
     data;
   return (
     <Box>
-      <Box overflowX="hidden" overflowY="hidden" minH="100vh">
-        <HeroColors
-          color1={colors.orange[100]}
-          color2={colors.gray[100]}
-          color3={colors.mint[400]}
-        >
-          <ProjectNav />
-          <Container>
-            <Box mt="20%" mb="6">
-              <TitleHeading as="h1" textAlign="center" mb="2">
-                {name}
-              </TitleHeading>
-              <StyledText textAlign="center">{subtitle}</StyledText>
-            </Box>
-            <Flex flexDir={{ sm: 'row', base: 'column' }}>
-              <MotionBox
+      <HeroColors
+        color1={colors.orange[100]}
+        color2={colors.gray[100]}
+        color3={colors.mint[400]}
+      >
+        <ProjectNav />
+        <Container>
+          <Box mt="20%" mb="6">
+            <TitleHeading as="h1" textAlign="center" mb="2">
+              {name}
+            </TitleHeading>
+            <StyledText textAlign="center">{subtitle}</StyledText>
+          </Box>
+          <Flex flexDir={{ sm: 'row', base: 'column' }}>
+            <MotionBox
+              style={{
+                translateX: isLargerThanMobile ? xPosAnimLarge : xPosAnimSmall,
+              }}
+            >
+              <Image
+                src={FeaturedMockUp.src}
+                alt="Desktop and laptop mock up of the related booker products"
+                w={{ sm: '95%', base: '90%' }}
+              />
+            </MotionBox>
+            <Box mt={{ sm: '25%', base: '10%' }}>
+              <motion.div
                 style={{
-                  translateX: isLargerThanMobile
-                    ? xPosAnimLarge
-                    : xPosAnimSmall,
+                  opacity: isLargerThanMobile ? opacityAnim : opacityAnimSmall,
                 }}
               >
-                <Image
-                  src={FeaturedMockUp.src}
-                  alt="Desktop and laptop mock up of the related booker products"
-                  w={{ sm: '95%', base: '90%' }}
-                />
-              </MotionBox>
-              <Box mt={{ sm: '25%', base: '10%' }}>
-                <motion.div
-                  style={{
-                    opacity: isLargerThanMobile
-                      ? opacityAnim
-                      : opacityAnimSmall,
-                  }}
-                >
-                  <Box mb="16">
-                    <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
-                      about
-                    </StyledText>
-                    <Text
-                      maxW="lg"
-                      ml="auto"
-                      textAlign="right"
-                      lineHeight="taller"
-                    >
-                      {description}
-                    </Text>
-                  </Box>
+                <Box mb="16">
                   <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
-                    tech
+                    about
                   </StyledText>
                   <Text
                     maxW="lg"
@@ -119,97 +102,103 @@ export const BookerPage = () => {
                     textAlign="right"
                     lineHeight="taller"
                   >
-                    {skills.join('  |  ')}
+                    {description}
                   </Text>
-                </motion.div>
-              </Box>
-            </Flex>
-            <Box mt="16">
-              <Flex flexDir={{ sm: 'row', base: 'column-reverse' }}>
-                <motion.div style={{ opacity: opacityAnim2 }}>
-                  <Box mt={{ sm: '0', base: '10%' }}>
-                    <StyledText
-                      as="h2"
-                      fontSize="6xl"
-                      fontFamily="belleza"
-                      mb="1"
-                    >
-                      challenges
-                    </StyledText>
-                    <Text maxW="md" mb="16" lineHeight="taller">
-                      {challenges}
-                    </Text>
-                    <StyledText
-                      as="h2"
-                      fontSize="6xl"
-                      fontFamily="belleza"
-                      mb="1"
-                    >
-                      favorite part
-                    </StyledText>
-                    <Text maxW="md" mb="16" lineHeight="taller">
-                      {favourite}
-                    </Text>
-                    <Link
-                      href={link}
-                      _hover={{
-                        textDecoration: 'none',
-                        color: 'sky.600',
-                        transition: 'ease',
-                        transitionDuration: '200ms',
-                        transitionProperty: 'color',
-                      }}
-                      target="_blank"
-                    >
-                      <Text
-                        fontFamily="belleza"
-                        fontSize="6xl"
-                        mb="1"
-                        display="inline"
-                      >
-                        try it
-                      </Text>
-                      <Icon
-                        as={HiExternalLink}
-                        display="inline"
-                        ml="2"
-                        w="10"
-                        h="10"
-                      />
-                    </Link>
-                  </Box>
-                </motion.div>
-                <MotionBox
-                  style={{
-                    translateX: isLargerThanMobile
-                      ? xPosAnim2Large
-                      : xPosAnim2Small,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '24px',
-                    alignItems: 'center',
-                  }}
-                >
-                  <Image
-                    src={FeaturedGif1.src}
-                    alt="First half of recording of using the booker app"
-                    height={FeaturedGif1.height / 1.5}
-                    borderRadius="3xl"
-                    marginRight={isLargerThanMobile ? '32' : undefined}
-                  />
-                  <Image
-                    src={FeaturedGif2.src}
-                    alt="Second half of recording of using the booker app"
-                    height={FeaturedGif2.height / 1.5}
-                    borderRadius="3xl"
-                    marginLeft={isLargerThanMobile ? '32' : undefined}
-                  />
-                </MotionBox>
-              </Flex>
+                </Box>
+                <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
+                  tech
+                </StyledText>
+                <Text maxW="lg" ml="auto" textAlign="right" lineHeight="taller">
+                  {skills.join('  |  ')}
+                </Text>
+              </motion.div>
             </Box>
-          </Container>
-        </HeroColors>
-      </Box>
+          </Flex>
+          <Box mt="16">
+            <Flex flexDir={{ sm: 'row', base: 'column-reverse' }}>
+              <motion.div style={{ opacity: opacityAnim2 }}>
+                <Box mt={{ sm: '0', base: '10%' }}>
+                  <StyledText
+                    as="h2"
+                    fontSize="6xl"
+                    fontFamily="belleza"
+                    mb="1"
+                  >
+                    challenges
+                  </StyledText>
+                  <Text maxW="md" mb="16" lineHeight="taller">
+                    {challenges}
+                  </Text>
+                  <StyledText
+                    as="h2"
+                    fontSize="6xl"
+                    fontFamily="belleza"
+                    mb="1"
+                  >
+                    favorite part
+                  </StyledText>
+                  <Text maxW="md" mb="16" lineHeight="taller">
+                    {favourite}
+                  </Text>
+                  <Link
+                    href={link}
+                    _hover={{
+                      textDecoration: 'none',
+                      color: 'sky.600',
+                      transition: 'ease',
+                      transitionDuration: '200ms',
+                      transitionProperty: 'color',
+                    }}
+                    target="_blank"
+                  >
+                    <Text
+                      fontFamily="belleza"
+                      fontSize="6xl"
+                      mb="1"
+                      display="inline"
+                    >
+                      try it
+                    </Text>
+                    <Icon
+                      as={HiExternalLink}
+                      display="inline"
+                      ml="2"
+                      w="10"
+                      h="10"
+                    />
+                  </Link>
+                </Box>
+              </motion.div>
+              <MotionBox
+                style={{
+                  translateX: isLargerThanMobile
+                    ? xPosAnim2Large
+                    : xPosAnim2Small,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '24px',
+                  alignItems: 'center',
+                }}
+              >
+                <Image
+                  src={FeaturedGif1.src}
+                  alt="First half of recording of using the booker app"
+                  height={FeaturedGif1.height / 1.5}
+                  borderRadius="3xl"
+                  marginRight={isLargerThanMobile ? '32' : undefined}
+                />
+                <Image
+                  src={FeaturedGif2.src}
+                  alt="Second half of recording of using the booker app"
+                  height={FeaturedGif2.height / 1.5}
+                  borderRadius="3xl"
+                  marginLeft={isLargerThanMobile ? '32' : undefined}
+                />
+              </MotionBox>
+            </Flex>
+          </Box>
+        </Container>
+      </HeroColors>
       <ProjectFooterNavigation
         prevProjectId={Projects.FF}
         nextProjectId={Projects.G1AND1}
