@@ -28,7 +28,7 @@ export const ProjectFooterNavigation = ({
     : undefined;
   const nextProject = projectTeasersData[nextProjectId];
 
-  const [isLargerThanTablet] = useMediaQuery('(min-width: 768)');
+  const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
   const isNextProjectHovered = isHovered === nextProjectId;
   const isPrevProjectHovered = isHovered === prevProjectId;
   const prevCircleShade = prevColorScheme === 'orange' ? 100 : 400;

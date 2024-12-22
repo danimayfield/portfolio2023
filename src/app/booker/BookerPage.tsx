@@ -29,7 +29,7 @@ export const BookerPage = () => {
   const data = projectData[Projects.Booker];
   const { colors } = useTheme();
   const { scrollYProgress } = useScroll();
-  const [isLargerThanMobile] = useMediaQuery('(min-width: 480)');
+  const [isLargerThanMobile] = useMediaQuery('(min-width: 480px)');
   const xPosAnimLarge = useTransform(
     scrollYProgress,
     [0, 0.15, 0.35],

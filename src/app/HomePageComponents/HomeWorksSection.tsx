@@ -26,7 +26,7 @@ type HomeWorksSectionProps = BoxProps;
 type ProjectItemProps = FlexProps & { project: Project; index: number };
 
 const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
-  const [isLargerThanTablet] = useMediaQuery('(min-width: 768)');
+  const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
   const [isHovered, setIsHovered] = useState(false);
   const { name, skills, color } = project;
 

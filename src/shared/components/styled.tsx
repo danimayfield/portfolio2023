@@ -24,7 +24,7 @@ export function HeroColors({
   ...props
 }: HeroColorsProps) {
   const { colors } = useTheme();
-  const [isLargerThanMobile] = useMediaQuery('(min-width: 480)');
+  const [isLargerThanMobile] = useMediaQuery('(min-width: 480px)');
   return (
     <Box overflow="hidden" w="100%" {...props}>
       {/* Portal the cirlces to the top of the DOM so they're unrestricted */}
