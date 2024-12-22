@@ -7,15 +7,15 @@ export const HomeAboutSection = ({ ...props }: HomeAboutSectionProps) => {
   const { colors } = useTheme();
   return (
     <Box position="relative" overflow="hidden">
-      <Box position="absolute" top="30%" left="0" w="100%">
+      <Box position="absolute" top="30%" left="0">
         <MotionBox
           position="relative"
-          animate={{ scale: 1.3 }}
+          animate={{ scale: 1.6 }}
           transition={{
             repeat: Infinity,
             repeatType: 'reverse',
             repeatDelay: 1,
-            duration: 1,
+            duration: 2,
             ease: 'easeInOut',
           }}
         >
