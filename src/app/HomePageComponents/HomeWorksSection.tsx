@@ -72,6 +72,15 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
               >
                 View
               </Text>
+              <StyledCircle
+                color={color}
+                w="12"
+                h="12"
+                position="absolute"
+                top="5%"
+                right="10%"
+                zIndex={1}
+              />
             </Box>
           </Flex>
         </Flex>
@@ -162,7 +171,7 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
             <Text color="blacks.800" px="5" position="relative" zIndex={50}>
               View
             </Text>
-            {isHovered && (
+            {isHovered ? (
               <MotionBox
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -175,6 +184,16 @@ const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
                 top="-1.5"
                 left="-1"
                 zIndex={40}
+              />
+            ) : (
+              <StyledCircle
+                color={color}
+                w="12"
+                h="12"
+                position="absolute"
+                top="-2"
+                left="2"
+                zIndex={1}
               />
             )}
           </MotionBox>
