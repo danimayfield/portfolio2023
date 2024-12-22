@@ -1,5 +1,12 @@
 'use client';
-import { Box, Flex, Image, Text, useTheme } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Image,
+  Text,
+  useMediaQuery,
+  useTheme,
+} from '@chakra-ui/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ContactSection, projectData, Projects } from '@app/HomePageComponents';
 import {
@@ -15,8 +22,7 @@ export const FastForwardPage = () => {
   const data = projectData[Projects.FF];
   const { colors } = useTheme();
   const { scrollYProgress } = useScroll();
-  const isLargerThanMobile =
-    typeof window !== 'undefined' ? window.outerWidth > 480 : true;
+  const [isLargerThanMobile] = useMediaQuery('(min-width: 480px)');
   const xPosAnimLarge = useTransform(
     scrollYProgress,
     [0, 0.15, 0.35],
@@ -29,7 +35,7 @@ export const FastForwardPage = () => {
   );
   const opacityAnim = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.35],
+    [0, 0.15, 0.25],
     [0, 0.5, 1]
   );
   const xPosAnim2Large = useTransform(
@@ -51,52 +57,37 @@ export const FastForwardPage = () => {
   const { name, description, subtitle, favourite, skills, challenges } = data;
   return (
     <Box>
-      <Box overflowX="clip">
-        <HeroColors
-          color1={colors.mint[300]}
-          color2={colors.gray[200]}
-          color3={colors.sky[300]}
-        >
-          <ProjectNav />
-          <Container>
-            <Box mt="20%" mb="6">
-              <TitleHeading as="h1" textAlign="center" mb="2">
-                {name}
-              </TitleHeading>
-              <StyledText textAlign="center">{subtitle}</StyledText>
-            </Box>
-            <Flex flexDir={{ sm: 'row', base: 'column' }}>
-              <MotionBox
-                style={{
-                  translateX: isLargerThanMobile
-                    ? xPosAnimLarge
-                    : xPosAnimSmall,
-                }}
-                flex="1"
-              >
-                <Image
-                  src={FeaturedMockUp.src}
-                  alt="Laptop mock up of the animal health link triage app"
-                  w={{ sm: '80%', base: '90%' }}
-                />
-              </MotionBox>
-              <Box mt={{ sm: '20%', base: '10%' }}>
-                <motion.div style={{ opacity: opacityAnim, flex: 1 }}>
-                  <Box mb="16">
-                    <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
-                      about
-                    </StyledText>
-                    <Text
-                      maxW="md"
-                      ml="auto"
-                      textAlign="right"
-                      lineHeight="taller"
-                    >
-                      {description}
-                    </Text>
-                  </Box>
+      <HeroColors
+        color1={colors.mint[300]}
+        color2={colors.gray[200]}
+        color3={colors.sky[300]}
+      >
+        <ProjectNav />
+        <Container>
+          <Box mt="20%" mb="6">
+            <TitleHeading as="h1" textAlign="center" mb="2">
+              {name}
+            </TitleHeading>
+            <StyledText textAlign="center">{subtitle}</StyledText>
+          </Box>
+          <Flex flexDir={{ sm: 'row', base: 'column' }}>
+            <MotionBox
+              style={{
+                translateX: isLargerThanMobile ? xPosAnimLarge : xPosAnimSmall,
+              }}
+              flex="1"
+            >
+              <Image
+                src={FeaturedMockUp.src}
+                alt="Laptop mock up of the animal health link triage app"
+                w={{ sm: '80%', base: '90%' }}
+              />
+            </MotionBox>
+            <Box mt={{ sm: '20%', base: '10%' }}>
+              <motion.div style={{ opacity: opacityAnim, flex: 1 }}>
+                <Box mb="16">
                   <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
-                    tech
+                    about
                   </StyledText>
                   <Text
                     maxW="md"
@@ -104,48 +95,52 @@ export const FastForwardPage = () => {
                     textAlign="right"
                     lineHeight="taller"
                   >
-                    {skills.join('  |  ')}
+                    {description}
                   </Text>
-                </motion.div>
-              </Box>
-            </Flex>
-          </Container>
-        </HeroColors>
-        <Container mt="16">
-          <Flex flexDir={{ sm: 'row', base: 'column-reverse' }}>
-            <motion.div style={{ opacity: opacityAnim2 }}>
-              <Box mt={{ sm: '0', base: '10%' }}>
-                <StyledText as="h2" fontSize="6xl" fontFamily="belleza" mb="1">
-                  challenges
+                </Box>
+                <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
+                  tech
                 </StyledText>
-                <Text maxW="md" mb="16" lineHeight="taller">
-                  {challenges}
+                <Text maxW="md" ml="auto" textAlign="right" lineHeight="taller">
+                  {skills.join('  |  ')}
                 </Text>
-                <StyledText as="h2" fontSize="6xl" fontFamily="belleza" mb="1">
-                  favorite part
-                </StyledText>
-                <Text maxW="md" mb="16" lineHeight="taller">
-                  {favourite}
-                </Text>
-              </Box>
-            </motion.div>
-            <MotionBox
-              style={{
-                translateX: isLargerThanMobile
-                  ? xPosAnim2Large
-                  : xPosAnim2Small,
-              }}
-              flex="1"
-            >
-              <Image
-                src={MockUp2.src}
-                alt="Desktop collage mock up of the animal health link app"
-                w={{ sm: '80%', base: '90%' }}
-              />
-            </MotionBox>
+              </motion.div>
+            </Box>
           </Flex>
         </Container>
-      </Box>
+      </HeroColors>
+      <Container mt="16">
+        <Flex flexDir={{ sm: 'row', base: 'column-reverse' }}>
+          <motion.div style={{ opacity: opacityAnim2 }}>
+            <Box mt={{ sm: '0', base: '10%' }}>
+              <StyledText as="h2" fontSize="6xl" fontFamily="belleza" mb="1">
+                challenges
+              </StyledText>
+              <Text maxW="md" mb="16" lineHeight="taller">
+                {challenges}
+              </Text>
+              <StyledText as="h2" fontSize="6xl" fontFamily="belleza" mb="1">
+                favorite part
+              </StyledText>
+              <Text maxW="md" mb="16" lineHeight="taller">
+                {favourite}
+              </Text>
+            </Box>
+          </motion.div>
+          <MotionBox
+            style={{
+              translateX: isLargerThanMobile ? xPosAnim2Large : xPosAnim2Small,
+            }}
+            flex="1"
+          >
+            <Image
+              src={MockUp2.src}
+              alt="Desktop collage mock up of the animal health link app"
+              w={{ sm: '80%', base: '90%' }}
+            />
+          </MotionBox>
+        </Flex>
+      </Container>
       <ProjectFooterNavigation
         nextProjectId={Projects.Booker}
         prevProjectId={Projects.AHL}

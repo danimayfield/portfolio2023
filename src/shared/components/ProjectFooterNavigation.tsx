@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Flex, Text, useTheme } from '@chakra-ui/react';
+import { Box, Flex, Text, useMediaQuery, useTheme } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import Image from 'next/image';
 import { MotionBox } from './motion-chakra';
@@ -28,8 +28,7 @@ export const ProjectFooterNavigation = ({
     : undefined;
   const nextProject = projectTeasersData[nextProjectId];
 
-  const isLargerThanTablet =
-    typeof window !== 'undefined' ? window.outerWidth > 768 : true;
+  const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
   const isNextProjectHovered = isHovered === nextProjectId;
   const isPrevProjectHovered = isHovered === prevProjectId;
   const prevCircleShade = prevColorScheme === 'orange' ? 100 : 400;
@@ -39,9 +38,13 @@ export const ProjectFooterNavigation = ({
     <Box w="full" overflowX="hidden" py="32">
       <Flex
         w="full"
-        justifyContent={prevProject ? 'space-between' : 'flex-end'}
+        justifyContent={{
+          base: prevProject ? 'space-between' : 'center',
+          md: prevProject ? 'space-between' : 'flex-end',
+        }}
         bg="blacks.50"
         py="14"
+        px="6"
         alignItems="center"
       >
         {prevProject && (
@@ -62,7 +65,6 @@ export const ProjectFooterNavigation = ({
                 whileTap={{
                   scale: 1,
                 }}
-                ml="25%"
                 position="relative"
                 zIndex={20}
               >
@@ -72,9 +74,11 @@ export const ProjectFooterNavigation = ({
                 <Text color="blacks.700" fontWeight="semibold">
                   {prevProject.name}
                 </Text>
-                <Text fontSize="2xs" maxW="sm" color="blacks.500">
-                  {prevProject.skills.join(', ')}
-                </Text>
+                {isLargerThanTablet && (
+                  <Text fontSize="2xs" maxW="sm" color="blacks.500">
+                    {prevProject.skills.join(', ')}
+                  </Text>
+                )}
               </MotionBox>
               {isPrevProjectHovered && (
                 <MotionBox
@@ -135,7 +139,6 @@ export const ProjectFooterNavigation = ({
               whileTap={{
                 scale: 1,
               }}
-              mr="25%"
               position="relative"
               zIndex={20}
             >
@@ -161,13 +164,15 @@ export const ProjectFooterNavigation = ({
                 <Text color="blacks.700" fontWeight="semibold">
                   {nextProject.name}
                 </Text>
-                <Text
-                  fontSize="2xs"
-                  maxW={isLargerThanTablet ? 'sm' : 'xs'}
-                  color="blacks.500"
-                >
-                  {nextProject.skills.join(', ')}
-                </Text>
+                {isLargerThanTablet && (
+                  <Text
+                    fontSize="2xs"
+                    maxW={isLargerThanTablet ? 'sm' : 'xs'}
+                    color="blacks.500"
+                  >
+                    {nextProject.skills.join(', ')}
+                  </Text>
+                )}
               </MotionBox>
             </MotionBox>
             {isNextProjectHovered && (
