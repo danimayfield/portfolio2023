@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import NextLink from 'next/link';
+import { useMediaQuery } from 'react-responsive';
 import { Project, Projects, projectTeasers } from './constants';
 import {
   Container,
@@ -25,8 +26,7 @@ type HomeWorksSectionProps = BoxProps;
 type ProjectItemProps = FlexProps & { project: Project; index: number };
 
 const ProjectItem = ({ project, index, ...props }: ProjectItemProps) => {
-  const isLargerThanTablet =
-    typeof window !== 'undefined' ? window.outerWidth > 768 : true;
+  const isLargerThanTablet = useMediaQuery({ minWidth: 768 });
   const [isHovered, setIsHovered] = useState(false);
   const { name, skills, color } = project;
 

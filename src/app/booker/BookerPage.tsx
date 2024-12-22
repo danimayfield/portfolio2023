@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Flex, Image, useTheme, Text, Link, Icon } from '@chakra-ui/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiExternalLink } from 'react-icons/hi';
+import { useMediaQuery } from 'react-responsive';
 import {
   Container,
   HeroColors,
@@ -20,8 +21,7 @@ export const BookerPage = () => {
   const data = projectData[Projects.Booker];
   const { colors } = useTheme();
   const { scrollYProgress } = useScroll();
-  const isLargerThanMobile =
-    typeof window !== 'undefined' ? window.outerWidth > 480 : true;
+  const isLargerThanMobile = useMediaQuery({ minWidth: 480 });
   const xPosAnimLarge = useTransform(
     scrollYProgress,
     [0, 0.15, 0.35],
