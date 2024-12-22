@@ -1,7 +1,15 @@
-import { Box, Flex, Icon, Image, Link, Text, useTheme } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Icon,
+  Image,
+  Link,
+  Text,
+  useMediaQuery,
+  useTheme,
+} from '@chakra-ui/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiExternalLink } from 'react-icons/hi';
-import { useMediaQuery } from 'react-responsive';
 import { ContactSection, projectData, Projects } from '@app/HomePageComponents';
 import { HeroColors, ProjectNav } from '@shared/components';
 import { Container, MotionBox, StyledText, TitleHeading } from '@shared';
@@ -13,7 +21,7 @@ export const Goals1And1Page = () => {
   const data = projectData[Projects.G1AND1];
   const { colors } = useTheme();
   const { scrollYProgress } = useScroll();
-  const isLargerThanMobile = useMediaQuery({ minWidth: 480 });
+  const [isLargerThanMobile] = useMediaQuery('(min-width: 480)');
   const xPosAnimLarge = useTransform(
     scrollYProgress,
     [0, 0.15, 0.35],

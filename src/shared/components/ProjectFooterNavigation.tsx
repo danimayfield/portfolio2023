@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { Box, Flex, Text, useTheme } from '@chakra-ui/react';
+import { Box, Flex, Text, useMediaQuery, useTheme } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import Image from 'next/image';
-import { useMediaQuery } from 'react-responsive';
 import { MotionBox } from './motion-chakra';
 import { StyledCircle } from './StyledCircle';
 import { Projects } from '@app/HomePageComponents';
@@ -29,7 +28,7 @@ export const ProjectFooterNavigation = ({
     : undefined;
   const nextProject = projectTeasersData[nextProjectId];
 
-  const isLargerThanTablet = useMediaQuery({ minWidth: 768 });
+  const [isLargerThanTablet] = useMediaQuery('(min-width: 768)');
   const isNextProjectHovered = isHovered === nextProjectId;
   const isPrevProjectHovered = isHovered === prevProjectId;
   const prevCircleShade = prevColorScheme === 'orange' ? 100 : 400;
