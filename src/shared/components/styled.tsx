@@ -1,4 +1,10 @@
-import { Box, BoxProps, useTheme, Portal } from '@chakra-ui/react';
+import {
+  Box,
+  BoxProps,
+  useTheme,
+  Portal,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import { PropsWithChildren } from 'react';
 import { MotionBox } from './motion-chakra';
 import { StyledCircle } from './StyledCircle';
@@ -18,6 +24,7 @@ export function HeroColors({
   ...props
 }: HeroColorsProps) {
   const { colors } = useTheme();
+  const [isLargerThanMobile] = useMediaQuery('(min-width: 480)');
   return (
     <Box overflow="hidden" w="100%" {...props}>
       {/* Portal the cirlces to the top of the DOM so they're unrestricted */}
@@ -27,7 +34,7 @@ export function HeroColors({
             position="relative"
             top={-40}
             left={-40}
-            animate={{ scale: 1.4 }}
+            animate={isLargerThanMobile ? { scale: 1.4 } : undefined}
             transition={{
               repeat: Infinity,
               repeatType: 'reverse',
@@ -43,7 +50,7 @@ export function HeroColors({
             left="70%"
             w="2xl"
             h="2xl"
-            animate={{ scale: 1.4 }}
+            animate={isLargerThanMobile ? { scale: 1.4 } : undefined}
             transition={{
               repeat: Infinity,
               repeatType: 'reverse',
@@ -59,7 +66,7 @@ export function HeroColors({
             left={40}
             w="md"
             h="md"
-            animate={{ scale: 1.2 }}
+            animate={isLargerThanMobile ? { scale: 1.2 } : undefined}
             transition={{
               repeat: Infinity,
               repeatType: 'reverse',
