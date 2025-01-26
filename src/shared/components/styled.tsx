@@ -1,11 +1,6 @@
-import {
-  Box,
-  BoxProps,
-  useTheme,
-  Portal,
-  useMediaQuery,
-} from '@chakra-ui/react';
+import { Box, BoxProps, useTheme, Portal } from '@chakra-ui/react';
 import { PropsWithChildren } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { MotionBox } from './motion-chakra';
 import { StyledCircle } from './StyledCircle';
 
@@ -24,7 +19,7 @@ export function HeroColors({
   ...props
 }: HeroColorsProps) {
   const { colors } = useTheme();
-  const [isLargerThanMobile] = useMediaQuery('(min-width: 480px)');
+  const isLargerThanMobile = useMediaQuery({ minWidth: '480px' });
   return (
     <Box overflow="hidden" w="100%" {...props}>
       {/* Portal the cirlces to the top of the DOM so they're unrestricted */}
