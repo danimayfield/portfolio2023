@@ -138,7 +138,7 @@ export const FastForwardPage = () => {
       <ProjectFooterNavigation
         nextProjectId={Projects.Booker}
         prevProjectId={Projects.AHL}
-        nextColorScheme="orange"
+        nextColorScheme="purple"
         prevColorScheme="sky"
       />
       <ContactSection />

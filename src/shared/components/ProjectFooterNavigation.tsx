@@ -35,6 +35,9 @@ export const ProjectFooterNavigation = ({
   const prevCircleShade = prevColorScheme === 'orange' ? 100 : 400;
   const nextCircleShade = nextColorScheme === 'orange' ? 100 : 400;
 
+  const prevProjSkills = prevProject?.skills.join(', ');
+  const nextProjSkills = nextProject.skills.join(', ');
+
   return (
     <Box w="full" overflowX="hidden" py="32">
       <Flex
@@ -60,7 +63,7 @@ export const ProjectFooterNavigation = ({
               {/* Hover animation: */}
               <MotionBox
                 animate={{
-                  translateX: isPrevProjectHovered ? 250 : undefined,
+                  translateX: isPrevProjectHovered ? 300 : undefined,
                   scale: isPrevProjectHovered ? 1.2 : undefined,
                 }}
                 whileTap={{
@@ -75,9 +78,11 @@ export const ProjectFooterNavigation = ({
                 <Text color="blacks.700" fontWeight="semibold">
                   {prevProject.name}
                 </Text>
-                {isLargerThanTablet && (
+                {isLargerThanTablet && prevProjSkills && (
                   <Text fontSize="2xs" maxW="sm" color="blacks.500">
-                    {prevProject.skills.join(', ')}
+                    {prevProjSkills.length > 55
+                      ? prevProjSkills.substring(0, 55) + '...'
+                      : prevProjSkills}
                   </Text>
                 )}
               </MotionBox>
@@ -134,7 +139,7 @@ export const ProjectFooterNavigation = ({
             {/* Hover animation: */}
             <MotionBox
               animate={{
-                translateX: isNextProjectHovered ? -200 : undefined,
+                translateX: isNextProjectHovered ? -300 : undefined,
                 scale: isNextProjectHovered ? 1.2 : undefined,
               }}
               whileTap={{
@@ -171,7 +176,9 @@ export const ProjectFooterNavigation = ({
                     maxW={isLargerThanTablet ? 'sm' : 'xs'}
                     color="blacks.500"
                   >
-                    {nextProject.skills.join(', ')}
+                    {nextProjSkills.length > 55
+                      ? nextProjSkills.substring(0, 55) + '...'
+                      : nextProjSkills}
                   </Text>
                 )}
               </MotionBox>

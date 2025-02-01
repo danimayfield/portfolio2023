@@ -69,7 +69,12 @@ export const WhereaboutsPage = () => {
         <ProjectNav />
         <Container>
           <Box mt="20%" mb="6">
-            <TitleHeading as="h1" textAlign="center" mb="2">
+            <TitleHeading
+              as="h1"
+              textAlign="center"
+              mb="2"
+              fontSize={{ base: '5xl', sm: '7xl', md: '8xl' }}
+            >
               {name}
             </TitleHeading>
             <StyledText textAlign="center">{subtitle}</StyledText>
@@ -192,6 +197,8 @@ export const WhereaboutsPage = () => {
       <ProjectFooterNavigation
         prevProjectId={Projects.Booker}
         nextProjectId={Projects.G1AND1}
+        nextColorScheme="mint"
+        prevColorScheme="purple"
       />
       <ContactSection />
     </Box>

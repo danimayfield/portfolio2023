@@ -190,6 +190,7 @@ export const BookerPage = () => {
       <ProjectFooterNavigation
         prevProjectId={Projects.FF}
         nextProjectId={Projects.Whereabouts}
+        nextColorScheme="orange"
       />
       <ContactSection />
     </Box>
