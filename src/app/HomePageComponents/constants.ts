@@ -168,6 +168,7 @@ export const projectData: Record<Projects, ProjectData> = {
       'react',
       'typescript',
       'stencil',
+      'custom web components',
       'node',
       'express',
       'apollo',
@@ -179,9 +180,9 @@ export const projectData: Record<Projects, ProjectData> = {
       'NPM package creation',
     ],
     description:
-      " I was the principal developer apart of the full redesign and front-end refactor of the primary Booker codebase, from a bespoke system to a fully reusable Saas product. Booker is a fully embeddable booking modal that can be embedded on any site. I also lead the creation and maintenance of a comprehensive custom design system built for Booker and it's related products. While managing multiple front end codebases for Booker and it's related products, I also became the primary developer managing the backend API that powers Booker!",
+      "I was the principal developer apart of the full redesign and front-end refactor of the primary Booker codebase, from a bespoke system to a fully reusable Saas product. Booker is a fully embeddable booking modal that can be embedded on any site. I also lead the creation and maintenance of a comprehensive custom design system built for Booker and it's related products. While managing multiple front end codebases for Booker and it's related products, I also became the primary developer managing the backend API that powers Booker!",
     challenges:
-      'The biggest challenge I had was creating a Saas product that could be so flexible it could be customized to make what acts like a bespoke booking engine for each individual business. Each business that uses Booker has vastly different products with vastly different needs and functionality requirements that all must be under a single codebase that can manage them all. I worked hard to organize the front and back end codebases meticulously to allow for each business to customize their Booker experience to what their business needs through the Booker administrative app. To do this, I took a lot of time to learn about each business and their needs and created avenues for different functionality to be reused for any business.',
+      'The biggest challenge I had was creating a Saas product that could be so flexible it could be customized to make what acts like a bespoke booking engine for each individual business. Each business that uses Booker has vastly different products with vastly different needs and functionality requirements that all must be under a single codebase that can manage them all. I worked hard to organize the front and back end codebases meticulously to allow for each business to customize their Booker experience to what their business needs through the Booker admin app. The Booker admin app is where businesss owners can create a Booker & generate the embed script they need to embed a Booker on their site. To do this, I took a lot of time to learn about each business and their needs and created avenues for different functionality to be reused for other businesses.',
     favourite:
       "My favourite part about creating and maintaining Booker and it's related products was creating something meaningful and useful that facilitated real revenue generation for Destination Marketing Organizations and their member businesses. We worked with real tourism operators throughout Canada and Booker played an integral role in the success of these small businesses as their preferred booking engine. Another big favourite part of mine was creating a custom calendar component for Booker from scratch, to be used in multiple different ways with multiple different functionalities.",
     link: 'https://www.tourism.tech/booker-dmo',
