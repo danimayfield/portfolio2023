@@ -25,11 +25,16 @@ export const AnimalHealthLinkPage = () => {
   const xPosAnimSmall = useTransform(
     scrollYProgress,
     [0, 0.15, 0.35],
-    [100, 50, 0]
+    [60, 20, 0]
   );
   const opacityAnim = useTransform(
     scrollYProgress,
     [0, 0.15, 0.25],
+    [0, 0.5, 1]
+  );
+  const opacityAnimSmall = useTransform(
+    scrollYProgress,
+    [0, 0.04, 0.1],
     [0, 0.5, 1]
   );
   const xPosAnim2Large = useTransform(
@@ -40,7 +45,7 @@ export const AnimalHealthLinkPage = () => {
   const xPosAnim2Small = useTransform(
     scrollYProgress,
     [0.3, 0.45, 0.6],
-    [150, 80, 0]
+    [30, 0, -20]
   );
   const opacityAnim2 = useTransform(
     scrollYProgress,
@@ -78,7 +83,12 @@ export const AnimalHealthLinkPage = () => {
               />
             </MotionBox>
             <Box mt={{ sm: '25%', base: '10%' }}>
-              <motion.div style={{ opacity: opacityAnim, flex: 1 }}>
+              <motion.div
+                style={{
+                  opacity: isLargerThanMobile ? opacityAnim : opacityAnimSmall,
+                  flex: 1,
+                }}
+              >
                 <Box mb="16">
                   <StyledText as="h2" fontSize="6xl" textAlign="right" mb="1">
                     about

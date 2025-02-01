@@ -13,9 +13,8 @@ import {
   TitleHeading,
 } from '@shared';
 import { ContactSection, projectData, Projects } from '@app/HomePageComponents';
-import FeaturedMockUp from '@shared/assets/booker/desktop.png';
-import FeaturedGif1 from '@shared/assets/booker/booker1.gif';
-import FeaturedGif2 from '@shared/assets/booker/booker2.gif';
+import FeaturedMockUp from '@shared/assets/booker/collage1.png';
+import FeaturedGif from '@shared/assets/booker/booker.gif';
 
 export const BookerPage = () => {
   const data = projectData[Projects.Booker];
@@ -62,9 +61,9 @@ export const BookerPage = () => {
   return (
     <Box>
       <HeroColors
-        color1={colors.orange[100]}
+        color1={colors.purple[100]}
         color2={colors.gray[100]}
-        color3={colors.mint[400]}
+        color3={colors.orange[100]}
       >
         <ProjectNav />
         <Container>
@@ -174,25 +173,14 @@ export const BookerPage = () => {
                   translateX: isLargerThanMobile
                     ? xPosAnim2Large
                     : xPosAnim2Small,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '24px',
-                  alignItems: 'center',
+                  flex: 1,
                 }}
               >
                 <Image
-                  src={FeaturedGif1.src}
-                  alt="First half of recording of using the booker app"
-                  height={FeaturedGif1.height / 1.5}
-                  borderRadius="3xl"
+                  src={FeaturedGif.src}
+                  alt="Recording of using the booker app"
+                  width={FeaturedGif.width * 0.8}
                   marginRight={isLargerThanMobile ? '32' : undefined}
-                />
-                <Image
-                  src={FeaturedGif2.src}
-                  alt="Second half of recording of using the booker app"
-                  height={FeaturedGif2.height / 1.5}
-                  borderRadius="3xl"
-                  marginLeft={isLargerThanMobile ? '32' : undefined}
                 />
               </MotionBox>
             </Flex>
@@ -201,7 +189,8 @@ export const BookerPage = () => {
       </HeroColors>
       <ProjectFooterNavigation
         prevProjectId={Projects.FF}
-        nextProjectId={Projects.G1AND1}
+        nextProjectId={Projects.Whereabouts}
+        nextColorScheme="orange"
       />
       <ContactSection />
     </Box>

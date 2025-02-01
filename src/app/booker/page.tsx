@@ -2,7 +2,7 @@
 import { BookerPage } from './BookerPage';
 import { useHasMounted } from '@shared/hooks';
 
-export default function Goals1And1() {
+export default function Booker() {
   const hasMounted = useHasMounted();
   if (!hasMounted) {
     return null;

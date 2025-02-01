@@ -4,4 +4,5 @@ export default {
   animalHealthLink: '/animal-health-link',
   fastForward: '/fast-forward',
   booker: '/booker',
+  whereabouts: '/whereabouts',
 } as const;

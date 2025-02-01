@@ -3,6 +3,7 @@ import Feature1and1 from '@shared/assets/1and1/mobileCollage1.png';
 import FeatureAHL from '@shared/assets/ahl/tablet1.png';
 import FeatureFastForward from '@shared/assets/fastForward/desktop1.png';
 import FeaturedBooker from '@shared/assets/booker/laptop.png';
+import FeatureWhereabouts from '@shared/assets/whereabouts/tablet1.png';
 import colors from '@theme/foundations/colors';
 
 export type Project = {
@@ -30,7 +31,8 @@ export enum Projects {
   G1AND1 = '1AND1',
   AHL = 'AHL',
   FF = 'FF',
-  Booker = 'Booker',
+  Booker = 'BOOKER',
+  Whereabouts = 'WHEREABOUTS',
 }
 
 export const projectTeasersData: Record<Projects, Project> = {
@@ -82,11 +84,27 @@ export const projectTeasersData: Record<Projects, Project> = {
       'apollo',
       'graphQL',
       'mongoDB',
-      'mongoose',
     ],
     imageSrc: FeaturedBooker.src,
     alt: 'Laptop mockup of the booker launcher app',
     route: routes.booker,
+    color: colors.purple[100],
+  },
+  [Projects.Whereabouts]: {
+    name: 'Whereabouts',
+    id: Projects.Whereabouts,
+    skills: [
+      'react',
+      'typescript',
+      'openAI',
+      'graphQL',
+      'apollo',
+      'mapbox',
+      'mongoDB',
+    ],
+    imageSrc: FeatureWhereabouts.src,
+    alt: 'Tablet mockup of Whereabouts application',
+    route: routes.whereabouts,
     color: colors.orange[100],
   },
 };
@@ -150,6 +168,7 @@ export const projectData: Record<Projects, ProjectData> = {
       'react',
       'typescript',
       'stencil',
+      'custom web components',
       'node',
       'express',
       'apollo',
@@ -161,11 +180,37 @@ export const projectData: Record<Projects, ProjectData> = {
       'NPM package creation',
     ],
     description:
-      " I was the principal developer apart of the full redesign and front-end refactor of the primary Booker codebase, from a bespoke system to a fully reusable Saas product. Booker is a fully embeddable booking modal that can be embedded on any site. I also lead the creation and maintenance of a comprehensive custom design system built for Booker and it's related products. While managing multiple front end codebases for Booker and it's related products, I also became the primary developer managing the backend API that powers Booker!",
+      "I was the principal developer apart of the full redesign and front-end refactor of the primary Booker codebase, from a bespoke system to a fully reusable Saas product. Booker is a fully embeddable booking modal that can be embedded on any site. I also lead the creation and maintenance of a comprehensive custom design system built for Booker and it's related products. While managing multiple front end codebases for Booker and it's related products, I also became the primary developer managing the backend API that powers Booker!",
     challenges:
-      'The biggest challenge I had was creating a Saas product that could be so flexible it could be customized to make what acts like a bespoke booking engine for each individual business. Each business that uses Booker has vastly different products with vastly different needs and functionality requirements that all must be under a single codebase that can manage them all. I worked hard to organize the front and back end codebases meticulously to allow for each business to customize their Booker experience to what their business needs through the Booker administrative app. To do this, I took a lot of time to learn about each business and their needs and created avenues for different functionality to be reused for any business.',
+      'The biggest challenge I had was creating a Saas product that could be so flexible it could be customized to make what acts like a bespoke booking engine for each individual business. Each business that uses Booker has vastly different products with vastly different needs and functionality requirements that all must be under a single codebase that can manage them all. I worked hard to organize the front and back end codebases meticulously to allow for each business to customize their Booker experience to what their business needs through the Booker admin app. The Booker admin app is where businesss owners can create a Booker & generate the embed script they need to embed a Booker on their site. To do this, I took a lot of time to learn about each business and their needs and created avenues for different functionality to be reused for other businesses.',
     favourite:
       "My favourite part about creating and maintaining Booker and it's related products was creating something meaningful and useful that facilitated real revenue generation for Destination Marketing Organizations and their member businesses. We worked with real tourism operators throughout Canada and Booker played an integral role in the success of these small businesses as their preferred booking engine. Another big favourite part of mine was creating a custom calendar component for Booker from scratch, to be used in multiple different ways with multiple different functionalities.",
     link: 'https://www.tourism.tech/booker-dmo',
+  },
+  [Projects.Whereabouts]: {
+    name: 'Whereabouts',
+    id: Projects.Whereabouts,
+    subtitle: 'member management and marketing tracking for the modern DMO.',
+    skills: [
+      'react',
+      'typescript',
+      'vite',
+      'auth0',
+      'custom web components',
+      'shadow DOM',
+      'graphQL',
+      'apollo',
+      'mongoDB',
+      'mongoose',
+      'mapbox API',
+      'openAI API',
+    ],
+    description:
+      'I was a principal developer in the creation and development of Whereabouts.  Whereabouts is a member management system for destination marketing organizations (DMOs) and their unique needs. Each DMO tends to manager their memebers in different ways, so Whereabouts was created to be a flexible system that can be customized to each DMOs needs. Through Vite I created fully customizeable and exportable widgets that injest data from the comprehensive Whereabouts database that can be embedded on any site through the use of custom web components.',
+    favourite:
+      "My favourite part about working on the Whereabouts application was creating the feature that allows DMOs to create a widget in less than five minutes. This widget can be embedded on their site that will showcase members of their choice with all of their member's images and important information. These widgets are fully customizeable through part styling and are protected against style bleed as they live within a shadow root. We use Vite to separately bundle each widget and we host them on a CDN to ensure fast loading times. This was a really fun challenge to work on and I am proud of the end product.",
+    challenges:
+      'The biggest challenge working on this application was right at the very begining when we were determining how to structure the database schema. We had to create a schema that was flexible enough to handle the different needs of each DMO but also be able to scale to the needs of the future. In particular, our Smart List feature was a challenge to conceptualize the schema, as it required storing enough data that dynamically determines the members that match the criteria of the list while not overinflating the schema or database. In the end, the time we took to plan out the database structure allowed our development time to be much more efficient and streamlined. The schema we settled on was rarely adjusted and allowed for the application to be flexible while allowing room for growth.',
+    link: 'https://next.whereabouts.tech/',
   },
 };
