@@ -63,7 +63,7 @@ export const WhereaboutsPage = () => {
     <Box>
       <HeroColors
         color1={colors.orange[100]}
-        color2={colors.gray[100]}
+        color2={colors.sky[100]}
         color3={colors.mint[400]}
       >
         <ProjectNav />
