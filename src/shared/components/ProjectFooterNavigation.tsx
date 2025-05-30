@@ -32,8 +32,12 @@ export const ProjectFooterNavigation = ({
   const isLargerThanTablet = useMediaQuery({ minWidth: '768px' });
   const isNextProjectHovered = isHovered === nextProjectId;
   const isPrevProjectHovered = isHovered === prevProjectId;
-  const prevCircleShade = prevColorScheme === 'orange' ? 100 : 400;
-  const nextCircleShade = nextColorScheme === 'orange' ? 100 : 400;
+  const prevCircleShade = ['orange', 'red'].includes(prevColorScheme)
+    ? 100
+    : 400;
+  const nextCircleShade = ['orange', 'red'].includes(nextColorScheme)
+    ? 100
+    : 400;
 
   const prevProjSkills = prevProject?.skills.join(', ');
   const nextProjSkills = nextProject.skills.join(', ');
