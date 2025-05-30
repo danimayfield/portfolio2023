@@ -196,8 +196,8 @@ export const WhereaboutsPage = () => {
       </HeroColors>
       <ProjectFooterNavigation
         prevProjectId={Projects.Booker}
-        nextProjectId={Projects.G1AND1}
-        nextColorScheme="mint"
+        nextProjectId={Projects.Seven}
+        nextColorScheme="red"
         prevColorScheme="purple"
       />
       <ContactSection />
