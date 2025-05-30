@@ -250,7 +250,7 @@ export const projectData: Record<Projects, ProjectData> = {
     favourite:
       "My favourite part about working on The Seven's new website was being able to create a fully customizable website that can be easily updated by the DMO's team through the PayloadCMS backend. I've loved seeing how the website has evolved since it's launch to see how it's been used by the DMO's team to promote the region and it's been a really fun project to be apart of. My second favourite part of this project was being able to integrate the work I've done on Whereabouts with this new website, embedding the Whereabouts widgets on the website to showcase the region's members.",
     challenges:
-      'As this website is a very public facing site, the biggest challenge working on this application was ensuring that every part of the site was accessible and easy to use by all of their users on any size device. This site also needed to be fully bilingual in English and French to cater to the region.',
+      'One of my favourite challenges for this website was making the season switcher. This feature allows users to switch the season on the site and view this region during the season they intend to visit. The color scheme as well as content changes on the site to match the season. This was such a fun feature to build and am really proud of how it works. As this website is a very public facing site, the other biggest challenge working on this application was ensuring that every part of the site was accessible and easy to use by all of their users on any size device. This site also needed to be fully bilingual in English and French to cater to the region.',
     link: 'https://www.northeasternontario.com/',
   },
 };
