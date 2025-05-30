@@ -4,6 +4,7 @@ import FeatureAHL from '@shared/assets/ahl/tablet1.png';
 import FeatureFastForward from '@shared/assets/fastForward/desktop1.png';
 import FeaturedBooker from '@shared/assets/booker/laptop.png';
 import FeatureWhereabouts from '@shared/assets/whereabouts/tablet1.png';
+import FeatureSeven from '@shared/assets/seven/laptop.png';
 import colors from '@theme/foundations/colors';
 
 export type Project = {
@@ -33,6 +34,7 @@ export enum Projects {
   FF = 'FF',
   Booker = 'BOOKER',
   Whereabouts = 'WHEREABOUTS',
+  Seven = 'SEVEN',
 }
 
 export const projectTeasersData: Record<Projects, Project> = {
@@ -106,6 +108,22 @@ export const projectTeasersData: Record<Projects, Project> = {
     alt: 'Tablet mockup of Whereabouts application',
     route: routes.whereabouts,
     color: colors.orange[100],
+  },
+  [Projects.Seven]: {
+    name: 'The Seven',
+    id: Projects.Seven,
+    skills: [
+      'react',
+      'typescript',
+      'nextJS',
+      'payloadCMS',
+      'algolia',
+      'tailwindCSS',
+    ],
+    imageSrc: FeatureSeven.src,
+    alt: 'Laptop mockup of The Seven website',
+    route: routes.seven,
+    color: colors.red[100],
   },
 };
 
@@ -212,5 +230,27 @@ export const projectData: Record<Projects, ProjectData> = {
     challenges:
       'The biggest challenge working on this application was right at the very begining when we were determining how to structure the database schema. We had to create a schema that was flexible enough to handle the different needs of each DMO but also be able to scale to the needs of the future. In particular, our Smart List feature was a challenge to conceptualize the schema, as it required storing enough data that dynamically determines the members that match the criteria of the list while not overinflating the schema or database. In the end, the time we took to plan out the database structure allowed our development time to be much more efficient and streamlined. The schema we settled on was rarely adjusted and allowed for the application to be flexible while allowing room for growth.',
     link: 'https://next.whereabouts.tech/',
+  },
+  [Projects.Seven]: {
+    name: 'The Seven',
+    id: Projects.Seven,
+    subtitle:
+      'a modern, responsive, and accessible website for North Eastern Ontario',
+    skills: [
+      'react',
+      'typescript',
+      'nextJS',
+      'payloadCMS',
+      'algolia',
+      'i18n',
+      'tailwindCSS',
+    ],
+    description:
+      "I was apart of the creation and deployment of The Seven's brand new, fully customizable website. The Seven is the brand for the North Eastern Ontario's Destination Marketing Organization. The Seven is a hub for all the different things to do, see and experience in the region. This website is a modern, responsive, and accessible website that is built with React, NextJS and Tailwind and with a Payload CMS backend so DMO staff can easily manage the content.",
+    favourite:
+      "My favourite part about working on The Seven's new website was being able to create a fully customizable website that can be easily updated by the DMO's team through the PayloadCMS backend. I've loved seeing how the website has evolved since it's launch to see how it's been used by the DMO's team to promote the region and it's been a really fun project to be apart of. My second favourite part of this project was being able to integrate the work I've done on Whereabouts with this new website, embedding the Whereabouts widgets on the website to showcase the region's members. We also had some fun css challenges during this project which included using masks to create some cool effects on certain blocks & sections on the site.",
+    challenges:
+      'One of my favourite challenges for this website was making the season switcher. This feature allows users to switch the season on the site and view this region during the season they intend to visit. The color scheme as well as content changes on the site to match the selected season and can be managed fully by the DMO staff through the PayloadCMS backend. This was such a fun feature to build and am really proud of how it works. As this website is a very public facing site, the other biggest challenge working on this application was ensuring that every part of the site was accessible and easy to use by all of their users on any size device. This site also needed to be fully bilingual in English and French to cater to the region.',
+    link: 'https://www.northeasternontario.com/',
   },
 };

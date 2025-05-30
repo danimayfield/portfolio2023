@@ -14,11 +14,11 @@ import {
   TitleHeading,
 } from '@shared';
 import { ContactSection, projectData, Projects } from '@app/HomePageComponents';
-import FeaturedMockUp from '@shared/assets/whereabouts/collage1.png';
-import FeaturedMockUp2 from '@shared/assets/whereabouts/tablet2.png';
+import FeaturedMockUp from '@shared/assets/seven/collage.png';
+import FeaturedMockUp2 from '@shared/assets/seven/laptop.png';
 
-export const WhereaboutsPage = () => {
-  const data = projectData[Projects.Whereabouts];
+export const SevenPage = () => {
+  const data = projectData[Projects.Seven];
   const { colors } = useTheme();
   const { scrollYProgress } = useScroll();
   const isLargerThanMobile = useMediaQuery({ minWidth: '480px' });
@@ -62,9 +62,9 @@ export const WhereaboutsPage = () => {
   return (
     <Box>
       <HeroColors
-        color1={colors.orange[100]}
-        color2={colors.sky[100]}
-        color3={colors.mint[400]}
+        color1={colors.red[100]}
+        color2={colors.orange[100]}
+        color3={colors.pink[100]}
       >
         <ProjectNav />
         <Container>
@@ -87,8 +87,8 @@ export const WhereaboutsPage = () => {
             >
               <Image
                 src={FeaturedMockUp.src}
-                alt="Desktop and laptop mock up of Whereabouts"
-                w={{ sm: '95%', base: '90%' }}
+                alt="Desktop and phone mock up of The Seven website"
+                w={{ sm: '85%', base: '90%' }}
               />
             </MotionBox>
             <Box mt={{ sm: '25%', base: '10%' }}>
@@ -184,7 +184,7 @@ export const WhereaboutsPage = () => {
               >
                 <Image
                   src={FeaturedMockUp2.src}
-                  alt="Tablet mockup of Whereabouts"
+                  alt="Laptop mockup of The Seven website"
                   w={FeaturedMockUp2.width * 0.8}
                   borderRadius="3xl"
                   marginRight={isLargerThanMobile ? '32' : undefined}
@@ -195,10 +195,10 @@ export const WhereaboutsPage = () => {
         </Container>
       </HeroColors>
       <ProjectFooterNavigation
-        prevProjectId={Projects.Booker}
-        nextProjectId={Projects.Seven}
-        nextColorScheme="red"
-        prevColorScheme="purple"
+        prevProjectId={Projects.Whereabouts}
+        nextProjectId={Projects.G1AND1}
+        nextColorScheme="mint"
+        prevColorScheme="orange"
       />
       <ContactSection />
     </Box>

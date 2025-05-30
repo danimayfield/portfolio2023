@@ -5,4 +5,5 @@ export default {
   fastForward: '/fast-forward',
   booker: '/booker',
   whereabouts: '/whereabouts',
+  seven: '/seven',
 } as const;
